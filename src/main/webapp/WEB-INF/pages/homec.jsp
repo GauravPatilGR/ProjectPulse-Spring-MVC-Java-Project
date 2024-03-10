@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 
 <head>
@@ -16,6 +18,8 @@
 </head>
 
 <body>
+
+
  
      <%@ include file="headerfile.jsp" %>
 
@@ -46,15 +50,17 @@
                       Hire Freelancer <br>
                       Here
                     </h1>
-                    <p>
-                   WELCOME 
-                    </p>
+                    <c:forEach  items="${kk}" var="e">
+                    <p>WELCOME  ${e.name} </p>
+                  
+                   </c:forEach>
+                   
                     <div class="btn-box">
                       <a href="userdash" class="btn-1">
-                       Hire a Freelancer
+                    Post Job <i class="fa-solid fa-angles-right"></i>
                       </a>
                         <a href="projectform" class="btn-2">
-                       Post Project
+                       Post Project  <i class="fa-solid fa-briefcase"></i>
                        </a>
                      
                     </div>
@@ -78,15 +84,16 @@
                       Hire Freelancer <br>
                       Here
                     </h1>
-                    <p>
-                      WELCOME 
-                    </p>
+                    <c:forEach  items="${kk}" var="e">
+                    <p>WELCOME  ${e.name} </p>
+                  
+                   </c:forEach>
                     <div class="btn-box">
                       <a href="userdash" class="btn-1">
-                          Hire a Freelancer
+                          Post Job <i class="fa-solid fa-angles-right"></i>
                       </a>
                         <a href="projectform" class="btn-2">
-                       Post Project
+                       Post Project  <i class="fa-solid fa-briefcase"></i>
                        </a>
                      
                     </div>
@@ -110,15 +117,16 @@
                       Hire Freelancer <br>
                       Here
                     </h1>
-                    <p>
-                     WELCOME 
-                    </p>
+                    <c:forEach  items="${kk}" var="e">
+                    <p>WELCOME  ${e.name} </p>
+                  
+                   </c:forEach>
                     <div class="btn-box">
                       <a href="userdash" class="btn-1">
-                         Hire a Freelancer
+                          Post Job  <i class="fa-solid fa-angles-right"></i>
                       </a>
                         <a href="projectform" class="btn-2">
-                       Post Project
+                       Post Project <i class="fa-solid fa-briefcase"></i>
                        </a>
                      
                     </div>
@@ -141,7 +149,7 @@
   </div>
 
 
-  <!-- experience section -->
+ <!-- experience section -->
 
   <section class="experience_section layout_padding">
     <div class="container">
@@ -159,14 +167,11 @@
               </h2>
             </div>
             <p>
-
             Let's collaborate to transform your vision into reality. Partner with a seasoned freelancer who prioritizes professionalism, reliability, and outstanding outcomes. Your project deserves nothing less than the best, and I'm here to deliver precisely that.
-                        </p>
+            </p>
             <div class="btn-box">
-              <a href="" class="btn-1">
-                Read More
-              </a>
-              <a href="userdash" class="btn-2">
+             
+              <a href="" class="btn-2">
                 Hire
               </a>
             </div>
@@ -255,6 +260,7 @@
 
 
   <!-- end category section -->
+
   <!-- about section -->
 
   <section class="about_section layout_padding">
@@ -268,19 +274,15 @@
       </div>
       <div class="detail-box">
         <h2>
-          About Spering Company
+          About ProjectPulse Company
         </h2>
         <p>
-        Welcome to ProjectPulse, where freelance talent meets exceptional projects!
+          Welcome to ProjectPulse, where freelance talent meets exceptional projects!
 
 At ProjectPulse, we're passionate about connecting businesses with top-tier freelancers to bring their projects to life. With a wealth of experience in the freelancing industry, we understand the challenges and opportunities that come with finding the perfect match for your project needs.
 
 Our mission is simple: to provide a platform where clients can access a diverse pool of skilled freelancers, and freelancers can showcase their expertise and find rewarding opportunities. Whether you're a business in need of specialized talent or a freelancer seeking exciting projects, ProjectPulse is your go-to destination.
        
-        </p>
-        <a href="">
-          Read More
-        </a>
       </div>
     </div>
   </section>
@@ -303,7 +305,7 @@ Our mission is simple: to provide a platform where clients can access a diverse 
               <div class="tab_container">
                 <div class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="img-box">
-                    <img src="images/f1.png" alt="">
+                    <img src="./files/images/f1.png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
@@ -316,7 +318,7 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                 </div>
                 <div class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   <div class="img-box">
-                    <img src="images/f2.png" alt="">
+                    <img src="./files/images/f2.png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
@@ -329,7 +331,7 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                 </div>
                 <div class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   <div class="img-box">
-                    <img src="images/f3.png" alt="">
+                    <img src="./files/images/f3.png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
@@ -342,7 +344,7 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                 </div>
                 <div class="t-link-box collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   <div class="img-box">
-                    <img src="images/f4.png" alt="">
+                    <img src="./files/images/f4.png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
@@ -360,22 +362,22 @@ Our mission is simple: to provide a platform where clients can access a diverse 
           <div class="col-md-6">
             <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="img-box">
-                <img src="images/freelance-img.jpg" alt="">
+                <img src="./files/images/freelance-img.jpg" alt="">
               </div>
             </div>
             <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="img-box">
-                <img src="images/freelance-img.jpg" alt="">
+                <img src="./files/images/freelance-img.jpg" alt="">
               </div>
             </div>
             <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="img-box">
-                <img src="images/freelance-img.jpg" alt="">
+                <img src="./files/images/freelance-img.jpg" alt="">
               </div>
             </div>
             <div class="collapse" id="collapseFour" aria-labelledby="headingfour" data-parent="#accordion">
               <div class="img-box">
-                <img src="images/freelance-img.jpg" alt="">
+                <img src="./files/images/freelance-img.jpg" alt="">
               </div>
             </div>
           </div>
@@ -402,10 +404,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
               <div class="carousel-item active">
                 <div class="detail-box">
                   <h4>
-                    John Hissona
+                   Gaurav Patil
                   </h4>
                   <p>
-                    passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in s
+                    This is Best Platform for Freelancer Where they can earn money through freelancing and get unlimited opprtunity to work on Sereval Project
                   </p>
                   <img src="./files/images/quote.png" alt="">
                 </div>
@@ -413,23 +415,23 @@ Our mission is simple: to provide a platform where clients can access a diverse 
               <div class="carousel-item">
                 <div class="detail-box">
                   <h4>
-                    John Hissona
+                   Rohit Waghmare
                   </h4>
                   <p>
-                    passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in s
+                  Their platform is user-friendly, their team is responsive and professional, and their commitment to quality is unmatched. Thanks to ProjectPulse, we were able to find the perfect freelancer for our project, and the results exceeded our expectations. 
                   </p>
-                  <img src="images/quote.png" alt="">
+                  <img src="./files/images/quote.png" alt="">
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="detail-box">
                   <h4>
-                    John Hissona
+                   Vaibhav Barde
                   </h4>
                   <p>
-                    passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in s
+                  The platform is intuitive, making it simple to browse profiles, communicate with freelancers, and manage projects. We've been consistently impressed with the quality of talent available on ProjectPulse, and the level of professionalism exhibited by both the freelancers and the ProjectPulse team.
                   </p>
-                  <img src="images/quote.png" alt="">
+                  <img src="./files/images/quote.png" alt="">
                 </div>
               </div>
             </div>
@@ -444,6 +446,8 @@ Our mission is simple: to provide a platform where clients can access a diverse 
       </div>
     </div>
   </section>
+
+  <!-- end client section -->
 
   <!-- end client section -->
 

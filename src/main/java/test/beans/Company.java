@@ -19,8 +19,17 @@ public class Company {
 	
 	private String profileimg;
 
+	private String about;
 	
 	
+	public String getAbout() {
+		return about;
+	}
+
+	public void setAbout(String about) {
+		this.about = about;
+	}
+
 	public int getId() {
 		return id;
 	}

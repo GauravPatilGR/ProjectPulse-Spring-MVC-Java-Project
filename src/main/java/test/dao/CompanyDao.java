@@ -41,6 +41,7 @@ public class CompanyDao {
 				c1.setPassword(rs.getString(6));
 				c1.setConfirmpassword(rs.getString(7));
 				c1.setProfileimg(rs.getString(8));
+				c1.setAbout(rs.getString(9));
 				
 				return c1;
 			}
@@ -49,6 +50,12 @@ public class CompanyDao {
 			
 			
 		});
+	}
+
+	public void updatedata(Company c2) {
+		
+		t1.update("update company set name='"+c2.getName()+"',email='"+c2.getEmail()+"',number='"+c2.getNumber()+"',website='"+c2.getWebsite()+"',about='"+c2.getAbout()+"' where id='"+c2.getId()+"'");
+		
 	}
 
 

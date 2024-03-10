@@ -1,3 +1,5 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -25,6 +27,8 @@
   <link href="./files/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="./files/css/responsive.css" rel="stylesheet" />
+  
+   <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -38,16 +42,24 @@
 
 
 
-  <div class="hero_area">
+   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="dash01">
-            <img src="images/logo.png" alt="" />
-            <span>
-              <%out.println(s1.getAttribute("email"));%>
-            </span>
+          <a class="navbar-brand" href=profilec class="nav-link" style="color:#fff;">
+            
+         
+          
+    <c:forEach items="${kk}" var="e">
+        <div style="width: 60px; height: 60px; border-radius: 50%; border: 1px solid white; overflow: hidden; margin-right: 10px;">
+            <img class="profilecimage" alt="" src="./files/webimages/${e.profileimg}" style="width: 100%; height:100% auto;">
+        </div>    
+    </c:forEach>
+   <i class="fa-solid fa-building"></i>&nbsp;Profile
+
+          
+            
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,29 +68,30 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About</a>
+                <a class="nav-link" href="about.html"><i class="fa-solid fa-location-arrow"></i> &nbsp; Hire</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="work.html">Category  </a>
+                <a class="nav-link" href="work.html"><i class="fa-solid fa-layer-group"></i> &nbsp;Category  </a>
               </li>
              
             </ul>
             <div class="user_option">
               <a href="logutc">
                
-                 <span>
-                  Logout
-                </span>
+               
+                <i class="fa-solid fa-power-off"></i> &nbsp;Logout
+             
               </a>
                
               
              
-             
+
             </div>
           </div>
+          
           <div>
             <div class="custom_menu-btn ">
               <button>
@@ -97,7 +110,8 @@
 
         </nav>
       </div>
-    </header>
+      </header>
+   
     <!-- end header section -->
 
 </body>

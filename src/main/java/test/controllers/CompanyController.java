@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -82,6 +83,7 @@ public class CompanyController {
 	}
 	
 	h1.setAttribute("email", email);
+	h1.setAttribute("company", Company);
 	
      return "redirect:/homec";	
 	}
@@ -90,9 +92,13 @@ public class CompanyController {
 	
 	//Mapping for Homepage
 	@RequestMapping("/homec")
-	public String home(HttpSession h1)
+	public String home(HttpSession h1,ModelMap mm)
 	{
 	String data=(String) h1.getAttribute("email");
+	
+	//List having all data of Company
+	List<Company> companies = (List<Company>)h1.getAttribute("company");
+    
 	
 	if(data==null)
 	{
@@ -101,9 +107,44 @@ public class CompanyController {
 		
 		
 		
-		
+		mm.addAttribute("kk",companies);
 		return "homec";
 	}
+	
+	
+	
+	//Profile Of Comapany
+	@RequestMapping("/profilec")
+	public String profilcompany(HttpSession h1,ModelMap mm)
+	{
+		
+		//Reuse the Method List having all data of Company
+		List<Company> companies = (List<Company>)h1.getAttribute("company");
+		
+		mm.addAttribute("kk",companies);
+		
+		return "profilec";
+	}
+	
+	
+	
+	@RequestMapping(value = "/updateinfoc",method = RequestMethod.POST)
+	public String updateprofile(@ModelAttribute ("c2") Company c2) 
+	{
+		
+
+		
+		
+		cd.updatedata(c2);
+		
+		
+		
+		
+		return "redirect:/loginc";
+	}
+	
+	
+	
 	
 	
 	//Mappig for Logout
