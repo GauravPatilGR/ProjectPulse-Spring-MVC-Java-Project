@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import test.beans.Company;
+import test.beans.postjob;
 
 public class CompanyDao {
 	
@@ -55,6 +56,12 @@ public class CompanyDao {
 	public void updatedata(Company c2) {
 		
 		t1.update("update company set name='"+c2.getName()+"',email='"+c2.getEmail()+"',number='"+c2.getNumber()+"',website='"+c2.getWebsite()+"',about='"+c2.getAbout()+"' where id='"+c2.getId()+"'");
+		
+	}
+
+	public void postjobdetails(postjob c1) {
+		
+		t1.update("insert into postjob (jobd,jtittle,jskills,jtype,jsalary) values ('"+c1.getJobd()+"','"+c1.getJtittle()+"','"+c1.getJskills()+"','"+c1.getJtype()+"','"+c1.getJsalary()+"')");
 		
 	}
 

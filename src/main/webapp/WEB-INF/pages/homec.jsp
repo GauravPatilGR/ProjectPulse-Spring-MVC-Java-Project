@@ -56,7 +56,7 @@
                    </c:forEach>
                    
                     <div class="btn-box">
-                      <a href="userdash" class="btn-1">
+                      <a href="postjob" class="btn-1">
                     Post Job <i class="fa-solid fa-angles-right"></i>
                       </a>
                         <a href="projectform" class="btn-2">
@@ -89,7 +89,7 @@
                   
                    </c:forEach>
                     <div class="btn-box">
-                      <a href="userdash" class="btn-1">
+                      <a href="postjob" class="btn-1">
                           Post Job <i class="fa-solid fa-angles-right"></i>
                       </a>
                         <a href="projectform" class="btn-2">
@@ -122,7 +122,7 @@
                   
                    </c:forEach>
                     <div class="btn-box">
-                      <a href="userdash" class="btn-1">
+                      <a href="postjob" class="btn-1">
                           Post Job  <i class="fa-solid fa-angles-right"></i>
                       </a>
                         <a href="projectform" class="btn-2">
@@ -134,7 +134,7 @@
                 </div>
                 <div class="offset-md-1 col-md-4 img-container">
                   <div class="img-box">
-                    <img src="images/slider-img.png" alt="">
+                    <img src="./files/images/slider-img.png" alt="">
                   </div>
                 </div>
               </div>

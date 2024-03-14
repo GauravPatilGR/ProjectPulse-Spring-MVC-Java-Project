@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import test.beans.Company;
+import test.beans.postjob;
 import test.dao.CompanyDao;
 
 @Controller
@@ -131,16 +132,32 @@ public class CompanyController {
 	@RequestMapping(value = "/updateinfoc",method = RequestMethod.POST)
 	public String updateprofile(@ModelAttribute ("c2") Company c2) 
 	{
-		
-
-		
-		
 		cd.updatedata(c2);
 		
-		
-		
-		
 		return "redirect:/loginc";
+	}
+	
+	@RequestMapping(value = "/postjobdata",method = RequestMethod.POST)
+	public String postjob(@ModelAttribute("c1") postjob c1)
+	{
+		
+		cd.postjobdetails(c1);
+		
+		return "redirect:/homec";
+		
+	}
+	
+	
+	
+	@RequestMapping("/postjob")
+	public String postjobpage(HttpSession h1,ModelMap m)
+	{
+		
+		//Reuse the Method List having all data of Company
+				List<Company> companies = (List<Company>)h1.getAttribute("company");
+				m.addAttribute("kk",companies);
+		
+		return "postjob";
 	}
 	
 	

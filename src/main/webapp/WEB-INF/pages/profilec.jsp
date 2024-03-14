@@ -30,6 +30,8 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Company Profile</h4>
                 </div>
+                
+                
                 <div class="row mt-2">
                     <div class="col-md-12"><label class="labels">Name of Company</label><input type="text" class="form-control" placeholder="first name" name="name" value="${e.name}"></div>
                     
@@ -40,9 +42,11 @@
                     <div class="col-md-6"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" name="number" value="${e.number}"></div>
                     <div class="col-md-6"><label class="labels">Email Address</label><input type="text" class="form-control" placeholder="enter address line 1" name="email"  value="${e.email}"></div>
                    <div class="col-md-12"><label class="labels">Website</label><input type="text" class="form-control" placeholder="enter address line 2" name="website" value="${e.website}"></div>
-                    <div class="col-md-12"><label class="labels">About us</label> <input type="text"  class="form-control"   placeholder="Add About Company" name="about" value="${e.about}"  style="height:300px;"></div>
+                    <div class="col-md-12"><label class="labels">About us</label> <input type="text"  class="form-control"   placeholder="Add About Company" name="about" value="${e.about}"  style="height:100px;"></div>
               
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                &nbsp;
+                <div class="mt-5 text-center"><a href="homec"><button class="btn btn-primary profile-button" type="button"><i class="fa-solid fa-house"></i> &nbsp;Home</button></a></div>
             </div>
         </div>
        
