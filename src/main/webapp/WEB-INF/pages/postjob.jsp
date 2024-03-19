@@ -1,3 +1,5 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -278,7 +280,12 @@
         <div class="question">
           <label>What is your estimated budget or Salary?</label>
            <input  type="text"  name="jsalary" placeholder="10000,20000"/>
-
+           
+           <c:forEach items="${kk}" var="e">
+            <input  type="text"  name="jcname" value="${e.name}"/>
+            
+             <input  type="text"  name="jcemail" value="${e.email}"/>
+         </c:forEach>
           <br>
         </div>
        

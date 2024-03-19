@@ -12,7 +12,29 @@ public class postjob {
 	
 	private String jtype;
 	
-	private String jsalary;
+    private String jsalary;
+	
+	private String jcname;
+	
+	private String jcemail;
+	
+	public String getJcname() {
+		return jcname;
+	}
+
+	public void setJcname(String jcname) {
+		this.jcname = jcname;
+	}
+
+	public String getJcemail() {
+		return jcemail;
+	}
+
+	public void setJcemail(String jcemail) {
+		this.jcemail = jcemail;
+	}
+
+	
 
 	public int getId() {
 		return id;

@@ -61,7 +61,7 @@ public class CompanyDao {
 
 	public void postjobdetails(postjob c1) {
 		
-		t1.update("insert into postjob (jobd,jtittle,jskills,jtype,jsalary) values ('"+c1.getJobd()+"','"+c1.getJtittle()+"','"+c1.getJskills()+"','"+c1.getJtype()+"','"+c1.getJsalary()+"')");
+		t1.update("insert into postjob (jobd,jtittle,jskills,jtype,jsalary,jcname,jcemail) values ('"+c1.getJobd()+"','"+c1.getJtittle()+"','"+c1.getJskills()+"','"+c1.getJtype()+"','"+c1.getJsalary()+"','"+c1.getJcname()+"','"+c1.getJcemail()+"')");
 		
 	}
 
