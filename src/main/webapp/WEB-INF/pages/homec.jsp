@@ -59,7 +59,7 @@
                       <a href="postjob" class="btn-1">
                     Post Job <i class="fa-solid fa-angles-right"></i>
                       </a>
-                        <a href="projectform" class="btn-2">
+                        <a href="postproject" class="btn-2">
                        Post Project  <i class="fa-solid fa-briefcase"></i>
                        </a>
                      
@@ -92,7 +92,7 @@
                       <a href="postjob" class="btn-1">
                           Post Job <i class="fa-solid fa-angles-right"></i>
                       </a>
-                        <a href="projectform" class="btn-2">
+                        <a href="postproject" class="btn-2">
                        Post Project  <i class="fa-solid fa-briefcase"></i>
                        </a>
                      
@@ -125,7 +125,7 @@
                       <a href="postjob" class="btn-1">
                           Post Job  <i class="fa-solid fa-angles-right"></i>
                       </a>
-                        <a href="projectform" class="btn-2">
+                        <a href="postproject" class="btn-2">
                        Post Project <i class="fa-solid fa-briefcase"></i>
                        </a>
                      

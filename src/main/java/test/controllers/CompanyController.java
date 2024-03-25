@@ -15,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 
 import test.beans.Company;
 import test.beans.postjob;
+import test.beans.postproject;
 import test.dao.CompanyDao;
 
 @Controller
@@ -129,6 +130,7 @@ public class CompanyController {
 	
 	
 	
+	//Update profile Mapping
 	@RequestMapping(value = "/updateinfoc",method = RequestMethod.POST)
 	public String updateprofile(@ModelAttribute ("c2") Company c2) 
 	{
@@ -137,6 +139,8 @@ public class CompanyController {
 		return "redirect:/loginc";
 	}
 	
+	
+	//Post Job data Mapping
 	@RequestMapping(value = "/postjobdata",method = RequestMethod.POST)
 	public String postjob(@ModelAttribute("c1") postjob c1)
 	{
@@ -147,8 +151,31 @@ public class CompanyController {
 		
 	}
 	
+	@RequestMapping(value = "/postprojectdata",method = RequestMethod.POST)
+	public String postproject(@ModelAttribute ("c2") postproject c2,@RequestParam("projectfile") MultipartFile filename) throws IOException
+	{
+		String f=filename.getOriginalFilename();
+		
+		String path="C:\\Users\\gaura\\eclipse-workspace\\SpringMVCPersonal_Project\\src\\main\\webapp\\files\\webimages";
+		
+		BufferedOutputStream bf= new BufferedOutputStream(new FileOutputStream(path+"/"+f));
+		
+		byte [] b=filename.getBytes();
+		
+		bf.write(b);
+		bf.close();
+		
+		c2.setProjectf(f);
+		
+		cd.postprojectdetails(c2);
+		
+		return "redirect:/homec";
+	}
+
 	
 	
+	
+	//Post job webpage
 	@RequestMapping("/postjob")
 	public String postjobpage(HttpSession h1,ModelMap m)
 	{
@@ -158,6 +185,19 @@ public class CompanyController {
 				m.addAttribute("kk",companies);
 		
 		return "postjob";
+	}
+	
+	@RequestMapping("/postproject")
+	public String postprojectpage(HttpSession h1,ModelMap m)
+	{
+		
+		//Reuse the Method List having all data of Company
+		List<Company> companies = (List<Company>)h1.getAttribute("company");
+		m.addAttribute("kk",companies);
+		
+		
+		
+		return "postproject";
 	}
 	
 	

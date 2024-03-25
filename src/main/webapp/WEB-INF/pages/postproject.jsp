@@ -49,7 +49,7 @@
       .banner {
       position: relative;
       height: 350px;
-      background-image: url("https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" );  
+      background-image: url("https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" );  
       background-size: cover;
    
       background-position: center;
@@ -228,30 +228,38 @@
            
     
     <div class="testbox">
-      <form action="postjobdata" method="post">
+      <form action="postprojectdata" method="post" enctype="multipart/form-data">
         <div class="banner">
-      <h1>Post job <i class="fa-solid fa-briefcase"></i> ,What you need done?</h1>
+      <h1>Post Project <i class="fa-solid fa-laptop-code"></i> ,What you need done?</h1>
         </div>
         <div class="colums">
           <div class="item">
-            <label for="fname">Job description<span>*</span></label>
-            <textarea id="myTextArea" name="jobd" rows="4" cols="50">
+            <label for="fname">Project Discription<span>*</span></label>
+            <textarea id="myTextArea" name="projectd" rows="4" cols="50">
               
           </textarea>
           </div>
           <div class="item">
-            <label for="lname">Job Tittle<span>*</span></label>
-            <input type="text" id="fileInput" name="jtittle" placeholder="Software Engineer">
+            <label for="lname">Project Tittle<span>*</span></label>
+            <input type="text" id="fileInput" name="projectt" placeholder="Software Engineer">
+             <br>
+           
+            <br>
+          </div>
+          
+            <div class="item">
+            <label for="lname"> Projecr Documentation<span>*</span></label>
+            <input type="file" id="fileInput" name="projectfile" placeholder="Software Engineer">
              <br>
            
             <br>
           </div>
           <br><br>
           <div class="item">
-            <label for="address1">Relevent skills need for this job?<span>*</span></label>
+            <label for="address1">Relevent skills need for this Project?<span>*</span></label>
             <br>
             <small>Enter up to 5 skills that best describe your project. Freelancers will use these skills to find projects they are most interested and experienced in.</small>
-            <input id="address1" height="50px"   name="jskills" required/>
+            <input id="address1" height="50px"   name="projects" required/>
             <h6>Suggested skills:
               MySQL,
               Web Hosting,
@@ -263,28 +271,15 @@
          
          
         
+     
         <div class="question">
-          <label>How would you like to get it done?</label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="Full Time Role" id="radio_1" name="jtype"/>
-              <label for="radio_1"  class="radio"><span>Full Time Role</span></label>
-            </div>
-            <div>
-              <input  type="radio" value="Freelancing" id="radio_2" name="jtype" />
-              <label for="radio_2" class="radio"><span>Freelancing</span></label>
-            </div>
-           
-          </div>
-        </div>
-        <div class="question">
-          <label>What is your estimated budget or Salary?</label>
-           <input  type="text"  name="jsalary" placeholder="10000,20000"/>
+          <label>What is your estimated budget or Salary for Project?</label>
+           <input  type="text"  name="projectb" placeholder="10000,20000"/>
            
            <c:forEach items="${kk}" var="e">
-            <input  type="hidden"  name="jcname" value="${e.name}"/>
+            <input  type="hidden"  name="projectc" value="${e.name}"/>
             
-             <input  type="hidden"  name="jcemail" value="${e.email}"/>
+             <input  type="hidden"  name="projecte" value="${e.email}"/>
          </c:forEach>
           <br>
         </div>
