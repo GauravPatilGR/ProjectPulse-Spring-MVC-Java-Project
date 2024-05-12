@@ -40,11 +40,13 @@
     
     
      <bean id="dao" class="test.dao.CompanyDao">
-     
+    
      
    
     <property name="t1" ref="jt"></property>
+   
    </bean>
+   
   
     
     

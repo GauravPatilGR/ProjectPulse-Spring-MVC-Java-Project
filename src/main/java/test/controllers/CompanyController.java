@@ -151,6 +151,8 @@ public class CompanyController {
 		
 	}
 	
+	
+	//Post Project Mapping
 	@RequestMapping(value = "/postprojectdata",method = RequestMethod.POST)
 	public String postproject(@ModelAttribute ("c2") postproject c2,@RequestParam("projectfile") MultipartFile filename) throws IOException
 	{
@@ -187,6 +189,7 @@ public class CompanyController {
 		return "postjob";
 	}
 	
+	//Post Project Page
 	@RequestMapping("/postproject")
 	public String postprojectpage(HttpSession h1,ModelMap m)
 	{
@@ -212,6 +215,8 @@ public class CompanyController {
 		
 		return "redirect:/loginc";
 	}
+	
+	
 	
 	
 	

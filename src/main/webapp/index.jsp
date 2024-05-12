@@ -124,7 +124,7 @@
                       <a href="loginc" class="btn-1">
                        Hire a Freelancer
                       </a>
-                      <a href="regu" class="btn-2">
+                      <a href="loginf" class="btn-2">
                        Earn Money Freelancing
                       </a>
                     </div>
@@ -155,7 +155,7 @@
                       <a href="loginc" class="btn-1">
                           Hire a Freelancer
                       </a>
-                      <a href="regu" class="btn-2">
+                      <a href="loginf" class="btn-2">
                         Earn Money Freelancing
                       </a>
                     </div>
@@ -186,7 +186,7 @@
                       <a href="loginc" class="btn-1">
                          Hire a Freelancer
                       </a>
-                      <a href="regu" class="btn-2">
+                      <a href="loginf" class="btn-2">
                        Earn Money Freelancing
                       </a>
                     </div>
