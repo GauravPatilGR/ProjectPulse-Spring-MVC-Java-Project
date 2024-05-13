@@ -48,6 +48,8 @@
       
         <button type="submit">Login</button>
         <p style="color:green;">${message}</p>
+        <p style="color:red;">${loginerror}</p>
+        
         <br>
         
       <a href="registerf" > <button type="button">Register Here</button></a>

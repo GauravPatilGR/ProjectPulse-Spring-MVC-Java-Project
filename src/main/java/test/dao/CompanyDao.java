@@ -1,5 +1,6 @@
 package test.dao;
 
+import java.security.spec.MGF1ParameterSpec;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -114,6 +115,12 @@ public class CompanyDao {
 			
 			
 		});
+		
+	}
+
+	public void updateprofile(Freelancer c1) {
+		
+		t1.update("update freelancer set  fname='"+c1.getFname()+"',femail='"+c1.getFemail()+"',fphone='"+c1.getFphone()+"',flinkedin='"+c1.getFlinkedin()+"',feducation='"+c1.getFeducation()+"',fcharge='"+c1.getFcharge()+"',skills='"+c1.getSkills()+"' where id='"+c1.getId()+"'");
 		
 	}
 
