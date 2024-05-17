@@ -1,6 +1,6 @@
 package test.dao;
 
-import java.security.spec.MGF1ParameterSpec;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -10,8 +10,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import test.beans.Company;
 import test.beans.Freelancer;
+
+import test.beans.jobapplications;
 import test.beans.postjob;
 import test.beans.postproject;
+import test.beans.showjob;
 
 public class CompanyDao {
 	
@@ -124,5 +127,73 @@ public class CompanyDao {
 		
 	}
 
+	public List<showjob> showalljobs() {
+		
+		return t1.query("SELECT *FROM postjob RIGHT JOIN company ON postjob.jcname = company.name", new RowMapper<showjob>() {
+
+			@Override
+			public showjob mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				showjob p = new showjob();
+				p.setId(rs.getInt(1));
+				p.setJobd(rs.getString(2));
+				p.setJtittle(rs.getString(3));
+				p.setJskills(rs.getString(4));
+				p.setJtype(rs.getString(5));
+				p.setJsalary(rs.getString(6));
+				p.setJcname(rs.getString(7));
+				p.setJcemail(rs.getString(8));
+				p.setAbout(rs.getString(17));
+				p.setProfileimg(rs.getString(16));
+				
+				
+				return p;
+			}
+			
+			
+			
+			
+			
+			
+		});
+		
+
+		
+	}
+
+	public List<postjob> showallinfo(int id) {
+		
+		return t1.query("select *from postjob where id='"+id+"'", new RowMapper<postjob>() {
+
+			@Override
+			public postjob mapRow(ResultSet rs, int rowNum) throws SQLException {
+			
+				 postjob p1= new postjob();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setJobd(rs.getString(2));
+				 p1.setJtittle(rs.getString(3));
+				 p1.setJskills(rs.getString(4));
+				 p1.setJtype(rs.getString(5));
+				 p1.setJsalary(rs.getString(6));
+				 p1.setJcname(rs.getString(7));
+				 p1.setJcemail(rs.getString(8));
+				 
+				return p1;
+			}
+			
+			
+			
+		});
+		
+	}
+
+	public void applyforjob(jobapplications c1) {
+	
+		t1.update("insert into jobapplications (companyname,position,candidatename,candidateemail,candidateresume) values ('"+c1.getCompanyname()+"','"+c1.getPosition()+"','"+c1.getCandidatename()+"','"+c1.getCandidateemail()+"','"+c1.getCandidateresume()+"')");
+		
+	}
+
+	
 
 }

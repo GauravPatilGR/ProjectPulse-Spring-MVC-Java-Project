@@ -56,9 +56,12 @@
                    </c:forEach>
                    
                     <div class="btn-box">
-                      <a href="postjob" class="btn-1">
-                    Earn Money Freelancing <i class="fa-solid fa-angles-right"></i>
+                      <a href="Explorejobs" class="btn-1">
+                    Explore Jobs<i class="fa-solid fa-angles-right"></i>
                       </a>
+                       <a href="postproject" class="btn-2">
+                       Explore Freelancing Project <i class="fa-solid fa-briefcase"></i>
+                       </a>
                       
                      
                     </div>
@@ -88,9 +91,12 @@
                    </c:forEach>
                    
                     <div class="btn-box">
-                      <a href="postjob" class="btn-1">
-                    Earn Money Freelancing <i class="fa-solid fa-angles-right"></i>
+                     <a href="Explorejobs" class="btn-1">
+                    Explore Jobs<i class="fa-solid fa-angles-right"></i>
                       </a>
+                       <a href="postproject" class="btn-2">
+                       Explore Freelancing Project <i class="fa-solid fa-briefcase"></i>
+                       </a>
                      
                     </div>
                   </div>
@@ -119,9 +125,12 @@
                    </c:forEach>
                    
                     <div class="btn-box">
-                      <a href="postjob" class="btn-1">
-                    Earn Money Freelancing <i class="fa-solid fa-angles-right"></i>
+                     <a href="Explorejobs" class="btn-1">
+                    Explore Jobs<i class="fa-solid fa-angles-right"></i>
                       </a>
+                       <a href="postproject" class="btn-2">
+                       Explore Freelancing Project <i class="fa-solid fa-briefcase"></i>
+                       </a>
                      
                     </div>
                   </div>

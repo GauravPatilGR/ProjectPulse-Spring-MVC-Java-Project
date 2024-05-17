@@ -71,9 +71,7 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"><i class="fa-solid fa-location-arrow"></i> &nbsp; Hire</a>
-              </li>
+            
               <li class="nav-item">
                 <a class="nav-link" href="work.html"><i class="fa-solid fa-layer-group"></i> &nbsp;Category  </a>
               </li>
