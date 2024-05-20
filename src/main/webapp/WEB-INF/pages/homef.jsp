@@ -59,7 +59,7 @@
                       <a href="Explorejobs" class="btn-1">
                     Explore Jobs<i class="fa-solid fa-angles-right"></i>
                       </a>
-                       <a href="postproject" class="btn-2">
+                       <a href="Exploreproject" class="btn-2">
                        Explore Freelancing Project <i class="fa-solid fa-briefcase"></i>
                        </a>
                       
@@ -94,7 +94,7 @@
                      <a href="Explorejobs" class="btn-1">
                     Explore Jobs<i class="fa-solid fa-angles-right"></i>
                       </a>
-                       <a href="postproject" class="btn-2">
+                       <a href="Exploreproject" class="btn-2">
                        Explore Freelancing Project <i class="fa-solid fa-briefcase"></i>
                        </a>
                      
@@ -128,7 +128,7 @@
                      <a href="Explorejobs" class="btn-1">
                     Explore Jobs<i class="fa-solid fa-angles-right"></i>
                       </a>
-                       <a href="postproject" class="btn-2">
+                       <a href="Exploreproject" class="btn-2">
                        Explore Freelancing Project <i class="fa-solid fa-briefcase"></i>
                        </a>
                      

@@ -25,6 +25,8 @@ import test.beans.Freelancer;
 
 import test.beans.jobapplications;
 import test.beans.postjob;
+import test.beans.postproject;
+import test.beans.projectapplication;
 import test.beans.showjob;
 import test.dao.CompanyDao;
 
@@ -158,6 +160,8 @@ public class FreelancerController {
 		return "Explorejobs";
 	}
 	
+	
+	
 	@RequestMapping(value = "/viewandApply/{id}" ,method = RequestMethod.GET)
 	public String showalljobinfo(@PathVariable int id,ModelMap mm,HttpSession h1)
 	{
@@ -198,6 +202,64 @@ public class FreelancerController {
 		    mm.addAttribute("messagejob","Congratulations Application submitted successfully");
 		
 		    return "Explorejobs";
+		
+	}
+	
+	@RequestMapping("/Exploreproject")
+	public String Exploreproject(ModelMap mm) {
+		
+		
+	List<postproject> projectdetails =	fd.showallprojectlist();
+	
+	mm.addAttribute("projectdata",projectdetails);
+		
+		return "Exploreproject";
+	}
+	
+	
+	
+	@RequestMapping(value = "/viewandapplyproject/{id}",method = RequestMethod.GET)
+	public String viewandapplyproject(@PathVariable int id,ModelMap mm,HttpSession h1) {
+		
+	   List<postproject> invidualprojectdetails=	fd.getprojectdetails(id);
+	   
+	   mm.addAttribute("projectinfo",invidualprojectdetails);
+	   
+	   
+	      //User Data
+		  List<Freelancer>  freelancerdata= (List<Freelancer>) h1.getAttribute("data");
+		  
+		  mm.addAttribute("profile",freelancerdata);
+			
+			return "viewandapplyproject";
+	   
+	   
+		
+	}
+	
+	@RequestMapping(value = "/applyforproject",method = RequestMethod.POST)
+	public String postprojectapplication(@ModelAttribute("c2")projectapplication c2,@RequestParam("resume") MultipartFile filename,ModelMap mm) throws IOException {
+		
+		    String f=filename.getOriginalFilename();
+			
+			String path="C:\\Users\\gaura\\eclipse-workspace\\SpringMVCPersonal_Project\\src\\main\\webapp\\files\\webimages";
+			
+			BufferedOutputStream bf= new BufferedOutputStream(new FileOutputStream(path+"/"+f));
+			
+			byte [] b=filename.getBytes();
+			
+			bf.write(b);
+			bf.close();
+			
+			c2.setCandidateresume(f);
+		
+		    fd.postprojectapplication(c2);
+		    
+		    mm.addAttribute("messagejob","Congratulations Application submitted successfully");
+			
+		    return "Exploreproject";
+		
+		
 		
 	}
 	

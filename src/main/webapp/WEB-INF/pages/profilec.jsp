@@ -25,6 +25,7 @@
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="./files/webimages/${e.profileimg}"><span class="font-weight-bold">${e.name}</span><span class="text-black-50">${e.email}</span><span> </span></div>
         </div>
+        
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">

@@ -14,6 +14,7 @@ import test.beans.Freelancer;
 import test.beans.jobapplications;
 import test.beans.postjob;
 import test.beans.postproject;
+import test.beans.projectapplication;
 import test.beans.showjob;
 
 public class CompanyDao {
@@ -191,6 +192,75 @@ public class CompanyDao {
 	public void applyforjob(jobapplications c1) {
 	
 		t1.update("insert into jobapplications (companyname,position,candidatename,candidateemail,candidateresume) values ('"+c1.getCompanyname()+"','"+c1.getPosition()+"','"+c1.getCandidatename()+"','"+c1.getCandidateemail()+"','"+c1.getCandidateresume()+"')");
+		
+	}
+
+	public List<postproject> showallprojectlist() {
+		
+		return t1.query("select *from postproject", new RowMapper<postproject>() {
+
+			@Override
+			public postproject mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				postproject pp= new postproject();
+				pp.setId(rs.getInt(1));
+				pp.setProjectd(rs.getString(2));
+				pp.setProjectf(rs.getString(3));
+				pp.setProjectb(rs.getString(4));
+				pp.setProjectt(rs.getString(5));
+				pp.setProjects(rs.getString(6));
+				pp.setProjectc(rs.getString(7));
+				pp.setProjecte(rs.getString(8));
+				
+		       
+				
+				return pp;
+			}
+			
+			
+			
+			
+			
+		});
+	}
+
+	public List<postproject> getprojectdetails(int id) {
+		
+		return t1.query("select *from postproject where id='"+id+"'", new RowMapper<postproject>() {
+
+			@Override
+			public postproject mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+
+				postproject ppp= new postproject();
+				
+				ppp.setId(rs.getInt(1));
+				ppp.setProjectd(rs.getString(2));
+				ppp.setProjectf(rs.getString(3));
+				ppp.setProjectb(rs.getString(4));
+				ppp.setProjectt(rs.getString(5));
+				ppp.setProjects(rs.getString(6));
+				ppp.setProjectc(rs.getString(7));
+				ppp.setProjecte(rs.getString(8));
+				
+		       
+				
+				return ppp;
+
+               
+				
+				
+			}
+			
+			
+			
+		});
+		
+	}
+
+	public void postprojectapplication(projectapplication c2) {
+		
+	  t1.update("insert into projectapplication (projectname,projectcompany,candidatename,candidateemail,candidateresume) values ('"+c2.getProjectname()+"','"+c2.getProjectcompany()+"','"+c2.getCandidatename()+"','"+c2.getCandidateemail()+"','"+c2.getCandidateresume()+"')");
 		
 	}
 
