@@ -13,6 +13,16 @@ public class jobapplications {
 	private String candidateemail;
 	
 	private String candidateresume;
+	
+	private int cid;
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
 
 	public int getId() {
 		return id;

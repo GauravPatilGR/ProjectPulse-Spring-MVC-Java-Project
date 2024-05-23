@@ -50,6 +50,7 @@
 
             <label for="resume"><b>Candidate Email</b></label>
             <input type="text" placeholder="Enter Your Email"  value="${ef.femail}" name="candidateemail">
+             <input type="text" placeholder="Enter Your Email"  value="${ef.id}" name="cid">
             </c:forEach>
              <label for="resume"><b>Resume</b></label>
             <input type="file" name="resume" accept=".pdf" >

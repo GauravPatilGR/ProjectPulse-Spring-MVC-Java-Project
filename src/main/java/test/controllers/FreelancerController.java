@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import test.beans.Company;
 import test.beans.Freelancer;
 
 import test.beans.jobapplications;
@@ -262,6 +263,43 @@ public class FreelancerController {
 		
 		
 	}
+	
+	@RequestMapping(value = "/myapplication/{cid}")
+	public String trackjob(@PathVariable int cid,ModelMap mm) {
+	
+    //show job
+	List<jobapplications> jobdata	=fd.trackapplication(cid);
+	
+	mm.addAttribute("jobapplication",jobdata);
+	
+	
+	//show project
+    List<projectapplication>   projectdata  =fd.trackprojectapplications(cid);
+    
+    mm.addAttribute("projectapplication",projectdata);
+    
+                
+    fd.withdrawjobapplication(cid); 
+               
+              
+		
+		return "myapplication";
+		
+	}
+	
+	@RequestMapping("/companies-view")
+	public String companiesview(ModelMap mm) {
+		
+	List<Company> companydata=	fd.showallcompaniesdata();
+	
+	mm.addAttribute("companydata",companydata);
+		
+		return "companiesview";
+	}
+	
+	
+		
+	
 	
 
 	

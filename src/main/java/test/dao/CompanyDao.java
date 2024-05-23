@@ -130,7 +130,7 @@ public class CompanyDao {
 
 	public List<showjob> showalljobs() {
 		
-		return t1.query("SELECT *FROM postjob RIGHT JOIN company ON postjob.jcname = company.name", new RowMapper<showjob>() {
+		return t1.query("SELECT * FROM postjob RIGHT JOIN company ON postjob.jcname = company.name WHERE postjob.jcname IS NOT NULL AND company.name IS NOT NULL AND postjob.id IS NOT NULL", new RowMapper<showjob>() {
 
 			@Override
 			public showjob mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -191,7 +191,7 @@ public class CompanyDao {
 
 	public void applyforjob(jobapplications c1) {
 	
-		t1.update("insert into jobapplications (companyname,position,candidatename,candidateemail,candidateresume) values ('"+c1.getCompanyname()+"','"+c1.getPosition()+"','"+c1.getCandidatename()+"','"+c1.getCandidateemail()+"','"+c1.getCandidateresume()+"')");
+		t1.update("insert into jobapplications (companyname,position,candidatename,candidateemail,candidateresume,cid) values ('"+c1.getCompanyname()+"','"+c1.getPosition()+"','"+c1.getCandidatename()+"','"+c1.getCandidateemail()+"','"+c1.getCandidateresume()+"','"+c1.getCid()+"')");
 		
 	}
 
@@ -260,9 +260,95 @@ public class CompanyDao {
 
 	public void postprojectapplication(projectapplication c2) {
 		
-	  t1.update("insert into projectapplication (projectname,projectcompany,candidatename,candidateemail,candidateresume) values ('"+c2.getProjectname()+"','"+c2.getProjectcompany()+"','"+c2.getCandidatename()+"','"+c2.getCandidateemail()+"','"+c2.getCandidateresume()+"')");
+	  t1.update("insert into projectapplication (projectname,projectcompany,candidatename,candidateemail,candidateresume,cdid) values ('"+c2.getProjectname()+"','"+c2.getProjectcompany()+"','"+c2.getCandidatename()+"','"+c2.getCandidateemail()+"','"+c2.getCandidateresume()+"','"+c2.getCdid()+"')");
 		
 	}
+
+	public List<jobapplications> trackapplication(int cid) {
+	
+		return t1.query("select *from jobapplications where cid='"+cid+"'", new RowMapper<jobapplications>() {
+
+			@Override
+			public jobapplications mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				jobapplications j1= new jobapplications();
+				
+				j1.setId(rs.getInt(1));
+				j1.setCompanyname(rs.getString(2));
+				j1.setPosition(rs.getString(3));
+				j1.setCandidatename(rs.getString(4));
+				j1.setCandidateemail(rs.getString(5));
+				j1.setCandidateresume(rs.getString(6));
+				j1.setCid(rs.getInt(7));
+				
+				return j1;
+			}
+			
+			
+			
+		});
+		
+	}
+
+	public List<projectapplication> trackprojectapplications(int cid) {
+		
+		return t1.query("select *from projectapplication where cdid='"+cid+"'", new RowMapper<projectapplication>() {
+
+			@Override
+			public projectapplication mapRow(ResultSet rs, int rowNum) throws SQLException {
+			
+				 projectapplication p1= new projectapplication();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setProjectname(rs.getString(2));
+				 p1.setProjectcompany(rs.getString(3));
+				 p1.setCandidatename(rs.getString(4));
+				 p1.setCandidateemail(rs.getString(5));
+				 p1.setCandidateresume(rs.getString(6));
+				 p1.setCdid(rs.getInt(7));
+				 
+				return p1;
+			}
+			
+			
+			
+			
+		});
+	}
+
+	public int withdrawjobapplication(int cid) {
+		
+		return t1.update("delete from jobapplications where id='"+cid+"'");
+	}
+
+	public List<Company> showallcompaniesdata() {
+		
+		return t1.query("select *from company", new RowMapper<Company>() {
+
+			@Override
+			public Company mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				Company c1= new Company();
+				c1.setId(rs.getInt(1));
+				c1.setName(rs.getString(2));
+				c1.setEmail(rs.getString(3));
+				c1.setNumber(rs.getString(4));
+				c1.setWebsite(rs.getString(5));
+				c1.setPassword(rs.getString(6));
+				c1.setConfirmpassword(rs.getString(7));
+				c1.setProfileimg(rs.getString(8));
+				c1.setAbout(rs.getString(9));
+			
+				return c1;
+			}
+			
+			
+			
+			
+		});
+	}
+
+	
 
 	
 

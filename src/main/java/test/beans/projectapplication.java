@@ -17,6 +17,17 @@ public class projectapplication {
 	
 	
 	private String candidateresume;
+	
+	private int cdid;
+
+	public int getCdid() {
+		return cdid;
+	}
+
+
+	public void setCdid(int cdid) {
+		this.cdid = cdid;
+	}
 
 
 	public int getId() {

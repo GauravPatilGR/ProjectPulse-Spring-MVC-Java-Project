@@ -71,6 +71,25 @@
                   <div class="img-box">
                     <img src="./files/images/slider-img.png" alt="">
                   </div>
+                   
+                        
+                <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                   
+                   
+                    <div class="btn-box">
+                      <a href="companies-view" class="btn-1">
+                    Listed Companies with Projectplus &nbsp;<i class="fa-regular fa-building"></i>
+                      </a>
+                      
+                      
+                     
+                    </div>
+                  </div>
+                </div>
+                   
+                   
+                   
                 </div>
               </div>
             </div>
@@ -105,6 +124,23 @@
                   <div class="img-box">
                     <img src="./files/images/slider-img.png" alt="">
                   </div>
+                  
+                   <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                   
+                   
+                    <div class="btn-box">
+                      <a href="companies-view" class="btn-1">
+                    Listed Companies with Projectplus &nbsp;<i class="fa-regular fa-building"></i>
+                      </a>
+                      
+                      
+                     
+                    </div>
+                  </div>
+                </div>
+                
+                
                 </div>
               </div>
             </div>
@@ -139,6 +175,22 @@
                   <div class="img-box">
                     <img src="./files/images/slider-img.png" alt="">
                   </div>
+                  
+                   <div class="col-md-5 offset-md-1">
+                  <div class="detail-box">
+                   
+                   
+                    <div class="btn-box">
+                      <a href="companies-view" class="btn-1">
+                    Listed Companies with Projectplus &nbsp;<i class="fa-regular fa-building"></i>
+                      </a>
+                      
+                      
+                     
+                    </div>
+                  </div>
+                </div>
+                
                 </div>
               </div>
             </div>

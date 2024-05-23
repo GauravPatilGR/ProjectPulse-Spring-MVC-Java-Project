@@ -57,7 +57,7 @@
         </div>    
    
      &nbsp;${e.fname}
-       </c:forEach>
+      </c:forEach>
 
           
             
@@ -71,6 +71,10 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
+               <c:forEach items="${kkk}" var="e">
+              <li class="nav-item active">
+                <a class="nav-link" href="myapplication/${e.id}"><i class="fa-regular fa-calendar-check"></i> &nbsp;My Applications</a>
+              </li> </c:forEach>
             
               <li class="nav-item">
                 <a class="nav-link" href="work.html"><i class="fa-solid fa-layer-group"></i> &nbsp;Category  </a>
@@ -109,7 +113,9 @@
 
         </nav>
       </div>
+      
       </header>
+      
    
     <!-- end header section -->
 
