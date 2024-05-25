@@ -1,8 +1,10 @@
 package test.controllers;
 
+import java.awt.JobAttributes;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.Authenticator.RequestorType;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,7 +12,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import test.beans.Company;
+import test.beans.Freelancer;
 import test.beans.postjob;
 import test.beans.postproject;
 import test.dao.CompanyDao;
@@ -107,11 +113,52 @@ public class CompanyController {
 		return "redirect:/loginc";
 	}
 		
-		
+	List<Freelancer> freelancerdata=	cd.showafreelancer();
+	mm.addAttribute("freelancerdta",freelancerdata);
 		
 		mm.addAttribute("kk",companies);
 		return "homec";
 	}
+	
+	@RequestMapping("/viewallfreelancer")
+	public String viewallfreelancer(ModelMap mm) {
+		
+	List<Freelancer> allfreelancerdata=	cd.showallfreelancer();
+	
+	mm.addAttribute("datafreelancer",allfreelancerdata);
+		
+		return "viewallfreelancer";
+	}
+	
+	@RequestMapping("view-history")
+	public String viewHistory() {
+		
+		
+	
+	
+	return "historyjobandproject";
+		
+	}
+	
+	@RequestMapping(value = "/getjobdata",method = RequestMethod.POST)
+	public String getjobdata(@RequestParam("email") String email,ModelMap mm) {
+		
+	//project	
+    List<postproject>  projectdatacompany =  cd.findbyemailproject(email);
+    
+    mm.addAttribute("projectdata",projectdatacompany);
+		
+	//jobs
+	List<postjob> jobdataofcompany=	cd.findbyemail(email);
+	
+	mm.addAttribute("jobdata",jobdataofcompany);
+	
+	return "historyjobandproject";
+	
+		
+	}
+	
+	
 	
 	
 	
@@ -142,12 +189,47 @@ public class CompanyController {
 	
 	//Post Job data Mapping
 	@RequestMapping(value = "/postjobdata",method = RequestMethod.POST)
-	public String postjob(@ModelAttribute("c1") postjob c1)
+	public String postjob(@ModelAttribute("c1") postjob c1,HttpSession h1)
 	{
 		
 		cd.postjobdetails(c1);
 		
+		
+		
 		return "redirect:/homec";
+		
+	}
+	
+	@RequestMapping(value = "/editjob/{id}",method = RequestMethod.GET)
+	public String editjob(@PathVariable int id,ModelMap mm) {
+		
+		List<postjob> editjob= cd.editjobdetails(id);
+		
+		mm.addAttribute("jobdata",editjob);
+		
+		return "editjobdetails";
+	}
+	
+	@RequestMapping(value = "/updatejobdata",method = RequestMethod.POST)
+	public String updatejobdata(@ModelAttribute ("c1") postjob c1,ModelMap mm)
+	{
+		cd.updatejobdata(c1);
+		
+		mm.addAttribute("messaage","Job updated successfully");
+		
+		return "postjob";
+		
+		
+	}
+	
+	@RequestMapping(value = "/Delete/{id}",method = RequestMethod.GET)
+	public String removejob(@PathVariable int id,ModelMap mm) {
+		
+		cd.deletebyid(id);
+		
+        mm.addAttribute("messaagedelete","Jobdetails Deleted successfully");
+		   
+		return "postjob";
 		
 	}
 	
@@ -202,6 +284,10 @@ public class CompanyController {
 		
 		return "postproject";
 	}
+	
+	
+	
+	
 	
 	
 	

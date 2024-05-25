@@ -55,8 +55,9 @@
         <div style="width: 60px; height: 60px; border-radius: 50%; border: 1px solid white; overflow: hidden; margin-right: 10px;">
             <img class="profilecimage" alt="" src="./files/webimages/${e.profileimg}" style="width: 100%; height:100% auto;">
         </div>    
+        <h4>${e.name}</h6>
     </c:forEach>
-   <i class="fa-solid fa-building"></i>&nbsp;Profile
+   
 
           
             
@@ -70,9 +71,14 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
+                <c:forEach items="${kk}" var="ef">
               <li class="nav-item">
-                <a class="nav-link" href="about.html"><i class="fa-solid fa-location-arrow"></i> &nbsp; Hire</a>
-              </li>
+                <form action="getjobdata" method="post">
+                <input type="hidden" name="email" value="${ef.email}">
+               
+               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-location-arrow" ></i> &nbsp;Job & Project History</button>
+                </form>
+              </li> </c:forEach>
               <li class="nav-item">
                 <a class="nav-link" href="work.html"><i class="fa-solid fa-layer-group"></i> &nbsp;Category  </a>
               </li>

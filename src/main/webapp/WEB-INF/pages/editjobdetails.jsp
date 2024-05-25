@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
+       <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
+    
     <style>
 
       html, body {
@@ -215,33 +217,26 @@
   <body>
   
   
-  
-    <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="" href="homec">
-            <img src="./files/images/logo.png" alt="" />
-            <span>
-             ProjectPulse
-            </span>
-          </a>
-          <br>
-          </nav>
+ 
            
     
     <div class="testbox">
-      <form action="postjobdata" method="post">
+    <c:forEach items="${jobdata}" var="e">
+      <form action="/SpringMVCPersonal_Project/updatejobdata" method="post">
         <div class="banner">
       <h1>Post job <i class="fa-solid fa-briefcase"></i> ,What you need done?</h1>
         </div>
+        
         <div class="colums">
           <div class="item">
             <label for="fname">Job description<span>*</span></label>
-            <textarea id="myTextArea" name="jobd" rows="4" cols="50">
-              
+            <textarea id="myTextArea" name="jobd" rows="4"  cols="50">
+              ${e.jobd}
           </textarea>
           </div>
           <div class="item">
             <label for="lname">Job Tittle<span>*</span></label>
-            <input type="text" id="fileInput" name="jtittle" placeholder="Software Engineer">
+            <input type="text" id="fileInput" name="jtittle" value=" ${e.jtittle}" placeholder="Software Engineer">
              <br>
            
             <br>
@@ -251,7 +246,7 @@
             <label for="address1">Relevent skills need for this job?<span>*</span></label>
             <br>
             <small>Enter up to 5 skills that best describe your project. Freelancers will use these skills to find projects they are most interested and experienced in.</small>
-            <input id="address1" height="50px"   name="jskills" required/>
+            <input id="address1" height="50px"  value=" ${e.jskills}"   name="jskills" required/>
             <h6>Suggested skills:
               MySQL,
               Web Hosting,
@@ -267,7 +262,7 @@
           <label>How would you like to get it done?</label>
           <div class="question-answer">
             <div>
-              <input type="radio" value="Full Time Role" id="radio_1" name="jtype"/>
+              <input type="radio" value="Full Time Role"  id="radio_1" name="jtype"/>
               <label for="radio_1"  class="radio"><span>Full Time Role</span></label>
             </div>
             <div>
@@ -279,22 +274,24 @@
         </div>
         <div class="question">
           <label>What is your estimated budget or Salary?</label>
-           <input  type="text"  name="jsalary" placeholder="10000,20000"/>
+           <input  type="text"  name="jsalary" value=" ${e.jsalary}" placeholder="10000,20000"/>
            
-           <c:forEach items="${kk}" var="e">
-            <input  type="hidden"  name="jcname" value="${e.name}"/>
+          
+            <input  type="text"  name="jcname" value="${e.jcname}"/ readonly>
             
-             <input  type="hidden"  name="jcemail" value="${e.email}"/>
-         </c:forEach>
+             <input  type="text"  name="jcemail" value="${e.jcemail}"/ readonly>
+             
+              <input  type="hidden"  name="id" value="${e.id}"/ readonly>
+      
+      
           <br>
         </div>
-          <h4>${messaage}</h4>
-          <h4>${messaagedelete}</h4>
-          
+         
+          <button type="submit">Update <i class="fa-solid fa-file-pen"></i></button>
         
-          <button type="submit">Submit</button>
         </div>
       </form>
+      </c:forEach>
     </div>
     
     
@@ -302,12 +299,7 @@
     
     
     
-      <!-- Footer section Start -->
-  
-   <%@ include file="footerfile.jsp" %>
-
-  <!-- Footer Section end -->
-    
+     
     
     
   </body>

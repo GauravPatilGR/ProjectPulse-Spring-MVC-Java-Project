@@ -69,7 +69,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
+                <a class="nav-link" href="homef"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
                <c:forEach items="${kkk}" var="e">
               <li class="nav-item active">
@@ -77,7 +77,7 @@
               </li> </c:forEach>
             
               <li class="nav-item">
-                <a class="nav-link" href="work.html"><i class="fa-solid fa-layer-group"></i> &nbsp;Category  </a>
+                <a class="nav-link" href="companies-view"><i class="fa-solid fa-layer-group"></i> &nbsp;Companies</a>
               </li>
              
             </ul>

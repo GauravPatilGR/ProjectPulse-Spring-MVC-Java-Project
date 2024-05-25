@@ -75,6 +75,8 @@ public class CompanyDao {
 		t1.update("insert into postjob (jobd,jtittle,jskills,jtype,jsalary,jcname,jcemail) values ('"+c1.getJobd()+"','"+c1.getJtittle()+"','"+c1.getJskills()+"','"+c1.getJtype()+"','"+c1.getJsalary()+"','"+c1.getJcname()+"','"+c1.getJcemail()+"')");
 		
 	}
+	
+
 
 	//Post Project
 	public void postprojectdetails(postproject c2) {
@@ -348,6 +350,175 @@ public class CompanyDao {
 		});
 	}
 
+	public List<Freelancer> showafreelancer() {
+		
+		return t1.query("select *from freelancer ORDER BY RANDOM() LIMIT 3", new RowMapper<Freelancer>() {
+
+			@Override
+			public Freelancer mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				
+				Freelancer f1= new Freelancer();
+				f1.setId(rs.getInt(1));
+				f1.setFname(rs.getString(2));
+				f1.setFemail(rs.getString(3));
+				f1.setFphone(rs.getString(4));
+				f1.setFdate(rs.getDate(5));
+				f1.setFlinkedin(rs.getString(6));
+				f1.setFeducation(rs.getString(7));
+				f1.setFpfile(rs.getString(8));
+				f1.setFcharge(rs.getString(9));
+				f1.setGender(rs.getString(10));
+				f1.setSkills(rs.getString(11));
+				f1.setPassword(rs.getString(12));
+				f1.setCpassword(rs.getString(13));
+				
+				return f1;
+			}
+			
+			
+			
+			
+			
+		});
+	}
+
+	public List<Freelancer> showallfreelancer() {
+		
+		return t1.query("select *from freelancer ORDER BY RANDOM()", new RowMapper<Freelancer>() {
+
+			@Override
+			public Freelancer mapRow(ResultSet rs, int rowNum) throws SQLException {
+			 
+				Freelancer f1= new Freelancer();
+				f1.setId(rs.getInt(1));
+				f1.setFname(rs.getString(2));
+				f1.setFemail(rs.getString(3));
+				f1.setFphone(rs.getString(4));
+				f1.setFdate(rs.getDate(5));
+				f1.setFlinkedin(rs.getString(6));
+				f1.setFeducation(rs.getString(7));
+				f1.setFpfile(rs.getString(8));
+				f1.setFcharge(rs.getString(9));
+				f1.setGender(rs.getString(10));
+				f1.setSkills(rs.getString(11));
+				f1.setPassword(rs.getString(12));
+				f1.setCpassword(rs.getString(13));
+				
+				return f1;
+				
+			}
+			
+			
+			
+			
+			
+		});
+	}
+
+	
+	
+	
+
+	public List<postjob> findbyemail(String email) {
+		
+		return t1.query("select *from postjob where jcemail='"+email+"'", new RowMapper<postjob>() {
+			
+			
+			@Override
+			public postjob mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+                 postjob p1= new postjob();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setJobd(rs.getString(2));
+				 p1.setJtittle(rs.getString(3));
+				 p1.setJskills(rs.getString(4));
+				 p1.setJtype(rs.getString(5));
+				 p1.setJsalary(rs.getString(6));
+				 p1.setJcname(rs.getString(7));
+				 p1.setJcemail(rs.getString(8));
+				 
+				return p1;
+			}
+			 
+			 
+			
+		});
+	}
+
+	public List<postproject> findbyemailproject(String email) {
+		
+		return t1.query("select *from postproject where projecte='"+email+"'", new RowMapper<postproject> () {
+
+			@Override
+			public postproject mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+                postproject ppp= new postproject();
+				
+				ppp.setId(rs.getInt(1));
+				ppp.setProjectd(rs.getString(2));
+				ppp.setProjectf(rs.getString(3));
+				ppp.setProjectb(rs.getString(4));
+				ppp.setProjectt(rs.getString(5));
+				ppp.setProjects(rs.getString(6));
+				ppp.setProjectc(rs.getString(7));
+				ppp.setProjecte(rs.getString(8));
+				
+		       
+				
+				return ppp;
+
+               
+			}
+			
+			
+			
+			
+			
+		});
+		
+	}
+
+	public List<postjob> editjobdetails(int id) {
+		
+		return t1.query("select *from postjob where id='"+id+"'", new RowMapper<postjob>() {
+
+			@Override
+			public postjob mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+                postjob p1= new postjob();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setJobd(rs.getString(2));
+				 p1.setJtittle(rs.getString(3));
+				 p1.setJskills(rs.getString(4));
+				 p1.setJtype(rs.getString(5));
+				 p1.setJsalary(rs.getString(6));
+				 p1.setJcname(rs.getString(7));
+				 p1.setJcemail(rs.getString(8));
+				return p1;
+			}
+			
+			
+			
+			
+			
+		});
+	}
+
+	
+    public void updatejobdata(postjob c1) {
+		
+		t1.update("update postjob set jobd='"+c1.getJobd()+"',jtittle='"+c1.getJtittle()+"',jskills='"+c1.getJskills()+"',jtype='"+c1.getJtype()+"',jsalary='"+c1.getJsalary()+"',jcname='"+c1.getJcname()+"',jcemail='"+c1.getJcemail()+"' where id='"+c1.getId()+"'");
+		
+	}
+
+	public int deletebyid(int id) {
+		
+		return t1.update("delete from postjob where id='"+id+"'");
+	}
+	
 	
 
 	
