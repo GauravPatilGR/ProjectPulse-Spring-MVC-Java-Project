@@ -205,6 +205,7 @@
       }
       }
        
+       
       
      
     </style>
@@ -216,40 +217,36 @@
   
   
   
-    <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="" href="homec">
-            <img src="./files/images/logo.png" alt="" />
-            <span>
-             ProjectPulse
-            </span>
-          </a>
-          <br>
-          </nav>
+   
            
     
     <div class="testbox">
-      <form action="postprojectdata" method="post" enctype="multipart/form-data">
+    <c:forEach items="${projectdata}"  var="e">
+      <form action="/SpringMVCPersonal_Project/editprojectdetails" method="post">
         <div class="banner">
       <h1>Post Project <i class="fa-solid fa-laptop-code"></i> ,What you need done?</h1>
         </div>
         <div class="colums">
           <div class="item">
             <label for="fname">Project Discription<span>*</span></label>
-            <textarea id="myTextArea" name="projectd" rows="4" cols="50">
-              
+            <textarea id="myTextArea" name="projectd"  rows="4" cols="50">
+              ${e.projectd}
           </textarea>
           </div>
           <div class="item">
             <label for="lname">Project Tittle<span>*</span></label>
-            <input type="text" id="fileInput" name="projectt" placeholder="Software Engineer">
+            <input type="text" id="fileInput" name="projectt" value=" ${e.projectt}" placeholder="Software Engineer">
              <br>
            
             <br>
           </div>
           
+          
+           
+          
             <div class="item">
             <label for="lname"> Projecr Documentation<span>*</span></label>
-            <input type="file" id="fileInput" name="projectfile" placeholder="Software Engineer">
+       
              <br>
            
             <br>
@@ -259,7 +256,7 @@
             <label for="address1">Relevent skills need for this Project?<span>*</span></label>
             <br>
             <small>Enter up to 5 skills that best describe your project. Freelancers will use these skills to find projects they are most interested and experienced in.</small>
-            <input id="address1" height="50px"   name="projects" required/>
+            <input id="address1" height="50px" value=" ${e.projects}"   name="projects" required/>
             <h6>Suggested skills:
               MySQL,
               Web Hosting,
@@ -274,21 +271,24 @@
      
         <div class="question">
           <label>What is your estimated budget or Salary for Project?</label>
-           <input  type="text"  name="projectb" placeholder="10000,20000"/>
+           <input  type="text" value=" ${e.projectb}" name="projectb" placeholder="10000,20000"/>
            
-           <c:forEach items="${kk}" var="e">
-            <label>Comapany Name</label>
-            <input  type="text"  name="projectc" value="${e.name}" readonly/>
+         
+            <input  type="text" value=" ${e.projectc}" name="projectc" readonly/>
             
-             <label>Comapany Email</label>
-             <input  type="text"  name="projecte" value="${e.email}" readonly/>
-         </c:forEach>
+           
+            
+             <input  type="text" value=" ${e.projecte}" name="projecte"  readonly />
+             
+               <input  type="hidden" value=" ${e.id}" name="id" readonly/>
+        
           <br>
         </div>
-       <h4>${message}</h4>
+       
           <button type="submit">Submit</button>
         </div>
       </form>
+      </c:forEach>
     </div>
     
     
@@ -298,7 +298,7 @@
     
       <!-- Footer section Start -->
   
-   <%@ include file="footerfile.jsp" %>
+  
 
   <!-- Footer Section end -->
     

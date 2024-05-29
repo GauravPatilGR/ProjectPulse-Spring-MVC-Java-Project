@@ -9,6 +9,10 @@ public class projectapplication {
 	
 	private String projectcompany;
 	
+	private String projectcompanyemail;
+	
+    private String status;
+	
 	
 	private String candidatename;
 	
@@ -19,6 +23,29 @@ public class projectapplication {
 	private String candidateresume;
 	
 	private int cdid;
+	
+	
+	public String getProjectcompanyemail() {
+		return projectcompanyemail;
+	}
+
+
+	public void setProjectcompanyemail(String projectcompanyemail) {
+		this.projectcompanyemail = projectcompanyemail;
+	}
+
+
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+	
 
 	public int getCdid() {
 		return cdid;

@@ -78,10 +78,20 @@
                
                <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-location-arrow" ></i> &nbsp;Job & Project History</button>
                 </form>
-              </li> </c:forEach>
-              <li class="nav-item">
-                <a class="nav-link" href="work.html"><i class="fa-solid fa-layer-group"></i> &nbsp;Category  </a>
               </li>
+               <li class="nav-item">
+                <form action="getcandidatedata" method="post">
+                <input type="hidden" name="email" value="${ef.email}">
+               
+               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-file-contract"></i> &nbsp;Application Received</button>
+                </form>
+              </li>
+              
+              
+               </c:forEach>
+              
+              
+             
              
             </ul>
             <div class="user_option">

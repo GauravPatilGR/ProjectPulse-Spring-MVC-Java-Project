@@ -7,42 +7,57 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>History and Activities</title>
+<title>Application Received</title>
  <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
- <h1 style="text-align:center; padding:20px;">History and Activities &nbsp;<i class="fa-solid fa-circle-check" style="font-size:20px;"></i></h1>
+ <h1 style="text-align:center; padding:20px;">Application Received &nbsp;<i class="fa-solid fa-file" style="font-size:20px;"></i></h1>
   
   <hr style="border: 5px solid #fff;">
   <br>
 <br>
 <br>
-   <h2>Manage Jobs on Projectplus &nbsp; <i class="fa-solid fa-user-check"></i></h2>
+   <h2> Jobs Applications&nbsp; <i class="fa-solid fa-user-check"></i></h2>
 <table>
 
     <thead>
         <tr>
-            <th scope="col">Job Tittle</th>
-            <th scope="col">Reqired Skills</th>
-            <th scope="col">Type</th>
-            <th scope="col">Salary</th>
+            <th scope="col">Applicant name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Job Profile</th>
+            <th scope="col">Resume</th>
             <th scope="col">Company Name</th>
             <th scope="col">Company Email</th>
-            <th scope="col">Manage &nbsp;<i class="fa-solid fa-list-check"></i></th>
+            <th scope="col">Status</th>
+            <th scope="col">Action &nbsp;<i class="fa-solid fa-list-check"></i></th>
             
            
         </tr>
     </thead>
     <tbody>
-        <c:forEach items="${jobdata}" var="e">
+        <c:forEach items="${jobapplicationdetails}" var="e">
             <tr>
-                <td data-label="Farmer Name">${e.jtittle}</td>
-                <td data-label="Product">${e.jskills}</td>
-                <td data-label="Type">${e.jtype}</td>
-                <td data-label="Price">${e.jsalary}</td>
-                <td data-label="Date">${e.jcname}</td>
-                <td data-label="Date">${e.jcemail}</td>
+                <td data-label="Farmer Name">${e.candidatename}</td>
+                <td data-label="Product">${e.candidateemail}</td>
+                <td data-label="Type">${e.position}</td>
+                <td data-label="Price">
+                <embed class="pdf" 
+               src=
+"./files/webimages/${e.candidateresume}"
+            width="210" height="250">
+            
+             <a href="./files/webimages/${e.candidateresume}" class="download-button" download="ProjectPlus Resume.PDF" style="background-color:#457b9d;padding:5px; color:#fff;">Download Resume
+             
+             
+    <i class="fa-solid fa-file-arrow-down"></i>
+             </a>
+                
+                
+                </td>
+                <td data-label="Date">${e.companyname}</td>
+                <td data-label="Date" >${e.companyemail}</td>
+                <td data-label="Date">${e.status}</td>
                 <td data-label="Date">
                  <a href="editjob/${e.id}">Edit &nbsp;<i class="fa-regular fa-pen-to-square"></i></a>
                  <br>
@@ -60,39 +75,51 @@
 <br>
 <br>
 
-<h2>Manage Project on Projectplus &nbsp;<i class="fa-solid fa-briefcase"></i></h2>
+<h2>Projects &nbsp;<i class="fa-solid fa-briefcase"></i></h2>
 <table>
 
     <thead>
         <tr>
-            <th scope="col">Project Tittle</th>
-            <th scope="col">Project Budget</th>
-            <th scope="col" class="header-spacing">Reqired Skills</th>
-             <th scope="col">Company Name</th>
-            <th scope="col">Company Email</th>
-             <th scope="col">Documentation</th>
-             <th scope="col">Manage &nbsp;<i class="fa-solid fa-list-check"></i></th>
+            <th scope="col">Applicant name</th>
+            <th scope="col">Email</th>
+            <th scope="col" class="header-spacing">Project name</th>
+             <th scope="col">Resume</th>
+            <th scope="col">Company Name</th>
+             
+             <th scope="col">Status &nbsp;<i class="fa-solid fa-list-check"></i></th>
             
            
         </tr>
     </thead>
     <tbody>
-        <c:forEach items="${projectdata}" var="ef">
+        <c:forEach items="${projectapplicationdetails}" var="ef">
             <tr>
-                <td data-label="Farmer Name">${ef.projectt}</td>
-                <td data-label="Product">${ef.projectb}</td>
-                <td data-label="Type">${ef.projects}</td>
-                <td data-label="Date">${ef.projectc}</td>
-                <td data-label="Date">${ef.projecte}</td>
-                <td data-label="Price">
+                <td data-label="Farmer Name">${ef.candidatename}</td>
+                <td data-label="Product">${ef.candidateemail}</td>
+                <td data-label="Product">${ef.projectname}</td>
+                
+                  <td data-label="Price">
                 
                   
         <embed class="pdf" 
                src=
-"./files/webimages/${ef.projectf}"
+"./files/webimages/${ef.candidateresume}"
             width="250" height="250">
+            
+            
+             <a href="./files/webimages/${ef.candidateresume}" class="download-button" download="ProjectPlus Resume.PDF" style="background-color:#457b9d;padding:5px; color:#fff;">Download Resume
+             
+             
+    <i class="fa-solid fa-file-arrow-down"></i>
+             </a>
                 
                 </td>
+                
+                <td data-label="Type">${ef.projectcompany}</td>
+               
+                <td data-label="Date">${ef.status}</td>
+                 
+              
                  <td data-label="Date">
                 
                  <br>
@@ -112,9 +139,9 @@
 
 body {
    background: rgb(255,255,255);
-background: -moz-linear-gradient(90deg, #17c3b2 50%, rgba(131,0,254,1) 50%);
-background: -webkit-linear-gradient(90deg,  #17c3b2 50%, rgba(131,0,254,1) 50%);
-background: linear-gradient(90deg,  #17c3b2 50%, rgba(131,0,254,1) 50%);
+background: -moz-linear-gradient(90deg, #013a63 50%, #1a2e35 50%);
+background: -webkit-linear-gradient(90deg,  #013a63 50%, #1a2e35 50%);
+background: linear-gradient(90deg,  #013a63 50%, #1a2e35 50%);
  font-family: "Open Sans", sans-serif;
  
 
@@ -123,6 +150,10 @@ background: linear-gradient(90deg,  #17c3b2 50%, rgba(131,0,254,1) 50%);
 h1,h2{
   color:#fff;
   font-size:30px !important;
+}
+
+td{
+font-size:15px;
 }
 
 table {
@@ -135,7 +166,7 @@ table {
 }
 
 table caption {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: .5em 0 .75em;
 }
 
@@ -188,7 +219,7 @@ table th {
   table td {
     border-bottom: 1px solid #ddd;
     display: block;
-    font-size: .8em;
+    font-size: .5em;
     text-align: right;
   }
   

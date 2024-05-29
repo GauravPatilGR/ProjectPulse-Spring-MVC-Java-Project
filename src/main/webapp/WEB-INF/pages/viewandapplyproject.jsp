@@ -53,6 +53,9 @@
              <label for="email"><b>Project Organization</b></label>
             <input type="text" placeholder="Enter Your Email" value="${ef.projectc}" name="projectcompany" required readonly>
             
+            <input type="text" placeholder="Enter Your Email" value="${ef.projecte}" name="projectcompanyemail" required readonly>
+            
+            
            <c:forEach items="${profile}" var="e">
              <label for="email"><b>Candidate Name</b></label>
             <input type="text" placeholder="Enter Your Email" value="${e.fname}" name="candidatename">
@@ -60,10 +63,12 @@
 
             <label for="resume"><b>Candidate Email</b></label>
             <input type="text" placeholder="Enter Your Email"  value="${e.femail}" name="candidateemail">
-              <input type="text" placeholder="Enter Your Email"  value="${e.id}" name="cdid">
+              <input type="hidden" placeholder="Enter Your Email"  value="${e.id}" name="cdid">
             </c:forEach>
              <label for="resume"><b>Resume</b></label>
             <input type="file" name="resume" accept=".pdf" >
+            
+             <input type="hidden" placeholder="Enter Your Email"  value="send" name="status">
 
             <button type="submit" class="btn">Submit</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>

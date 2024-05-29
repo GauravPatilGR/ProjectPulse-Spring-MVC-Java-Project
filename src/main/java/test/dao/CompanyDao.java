@@ -85,6 +85,9 @@ public class CompanyDao {
 		
 	}
 	
+  
+	
+	
     public void datasave(Freelancer c1) {
 		
 		t1.update("insert into freelancer (fname,femail,fphone,fdate,fpfile,flinkedin,feducation,fcharge,gender,skills,password,cpassword) values('"+c1.getFname()+"','"+c1.getFemail()+"','"+c1.getFphone()+"','"+c1.getFdate()+"','"+c1.getFpfile()+"','"+c1.getFlinkedin()+"','"+c1.getFeducation()+"','"+c1.getFcharge()+"','"+c1.getGender()+"', '"+c1.getSkills()+"' , '"+c1.getPassword()+"','"+c1.getCpassword()+"')");
@@ -193,7 +196,7 @@ public class CompanyDao {
 
 	public void applyforjob(jobapplications c1) {
 	
-		t1.update("insert into jobapplications (companyname,position,candidatename,candidateemail,candidateresume,cid) values ('"+c1.getCompanyname()+"','"+c1.getPosition()+"','"+c1.getCandidatename()+"','"+c1.getCandidateemail()+"','"+c1.getCandidateresume()+"','"+c1.getCid()+"')");
+		t1.update("insert into jobapplications (companyname,position,candidatename,candidateemail,candidateresume,cid,companyemail,status) values ('"+c1.getCompanyname()+"','"+c1.getPosition()+"','"+c1.getCandidatename()+"','"+c1.getCandidateemail()+"','"+c1.getCandidateresume()+"','"+c1.getCid()+"','"+c1.getCompanyemail()+"','"+c1.getStatus()+"')");
 		
 	}
 
@@ -262,7 +265,7 @@ public class CompanyDao {
 
 	public void postprojectapplication(projectapplication c2) {
 		
-	  t1.update("insert into projectapplication (projectname,projectcompany,candidatename,candidateemail,candidateresume,cdid) values ('"+c2.getProjectname()+"','"+c2.getProjectcompany()+"','"+c2.getCandidatename()+"','"+c2.getCandidateemail()+"','"+c2.getCandidateresume()+"','"+c2.getCdid()+"')");
+	  t1.update("insert into projectapplication (projectname,projectcompany,candidatename,candidateemail,candidateresume,cdid,companyemail,status) values ('"+c2.getProjectname()+"','"+c2.getProjectcompany()+"','"+c2.getCandidatename()+"','"+c2.getCandidateemail()+"','"+c2.getCandidateresume()+"','"+c2.getCdid()+"','"+c2.getProjectcompanyemail()+"','"+c2.getStatus()+"')");
 		
 	}
 
@@ -518,6 +521,77 @@ public class CompanyDao {
 		
 		return t1.update("delete from postjob where id='"+id+"'");
 	}
+
+	public int removeprojectbyid(int id) {
+		
+		return t1.update("delete from postproject where id='"+id+"'");
+	}
+
+	public List<jobapplications> getapplications(String email) {
+		
+		return t1.query("select *from jobapplications where companyemail='"+email+"'", new RowMapper<jobapplications>() {
+
+			@Override
+			public jobapplications mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				
+                jobapplications j1= new jobapplications();
+				
+				j1.setId(rs.getInt(1));
+				j1.setCompanyname(rs.getString(2));
+				j1.setPosition(rs.getString(3));
+				j1.setCandidatename(rs.getString(4));
+				j1.setCandidateemail(rs.getString(5));
+				j1.setCandidateresume(rs.getString(6));
+				j1.setCid(rs.getInt(7));
+				j1.setCompanyemail(rs.getString(8));
+				j1.setStatus(rs.getString(9));
+				
+				
+				
+				return j1;
+				
+			}
+			
+			
+			
+			
+		});
+	}
+
+	public List<projectapplication> getprojectapplications(String email) {
+		
+		return t1.query("select *from projectapplication where companyemail='"+email+"'", new RowMapper<projectapplication>() {
+
+			@Override
+			public projectapplication mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+                 projectapplication p1= new projectapplication();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setProjectname(rs.getString(2));
+				 p1.setProjectcompany(rs.getString(3));
+				 p1.setCandidatename(rs.getString(4));
+				 p1.setCandidateemail(rs.getString(5));
+				 p1.setCandidateresume(rs.getString(6));
+				 p1.setCdid(rs.getInt(7));
+				 p1.setProjectcompanyemail(rs.getString(8));
+				 p1.setStatus(rs.getString(9));
+				return p1;
+			}
+			
+			
+			
+		});		
+	}
+
+	
+	
+
+	
+	
+
+
 	
 	
 

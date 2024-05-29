@@ -39,6 +39,11 @@
 
             <label for="name"><b>Company Name</b></label>
             <input type="text" placeholder="Enter Your Name" name="companyname" value="${e.jcname}" required readonly>
+            
+           
+            <input type="hidden" placeholder="Enter Your Name" name="companyemail" value="${e.jcemail}" required readonly>
+            
+            
 
              <label for="email"><b>Position</b></label>
             <input type="text" placeholder="Enter Your Email" value="${e.jtittle}" name="position" required readonly>
@@ -50,10 +55,12 @@
 
             <label for="resume"><b>Candidate Email</b></label>
             <input type="text" placeholder="Enter Your Email"  value="${ef.femail}" name="candidateemail">
-             <input type="text" placeholder="Enter Your Email"  value="${ef.id}" name="cid">
+             <input type="hidden" placeholder="Enter Your Email"  value="${ef.id}" name="cid">
             </c:forEach>
              <label for="resume"><b>Resume</b></label>
             <input type="file" name="resume" accept=".pdf" >
+            
+            <input type="hidden" placeholder="Enter Your Name" name="status" value="send" required readonly>
 
             <button type="submit" class="btn">Submit</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>

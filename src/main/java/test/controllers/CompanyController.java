@@ -10,7 +10,9 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,8 +26,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import test.beans.Company;
 import test.beans.Freelancer;
+import test.beans.jobapplications;
 import test.beans.postjob;
 import test.beans.postproject;
+import test.beans.projectapplication;
 import test.dao.CompanyDao;
 
 @Controller
@@ -186,6 +190,7 @@ public class CompanyController {
 		return "redirect:/loginc";
 	}
 	
+	                                  //Job Post,Update Delete Start
 	
 	//Post Job data Mapping
 	@RequestMapping(value = "/postjobdata",method = RequestMethod.POST)
@@ -233,6 +238,13 @@ public class CompanyController {
 		
 	}
 	
+	                           //Job Post,Update Delete End
+	
+	
+	
+	
+	                           //Project Post,Update Delete Start
+	
 	
 	//Post Project Mapping
 	@RequestMapping(value = "/postprojectdata",method = RequestMethod.POST)
@@ -255,7 +267,55 @@ public class CompanyController {
 		
 		return "redirect:/homec";
 	}
-
+	
+	
+	
+	
+	
+	@RequestMapping(value = "/deleteproject/{id}",method = RequestMethod.GET)
+	public String reomveproject(@PathVariable int id,ModelMap mm)
+	{
+		
+		cd.removeprojectbyid(id);
+		
+		mm.addAttribute("message","Project removed successfully");
+		
+		return "postproject";
+		
+	}
+	
+	
+	
+	
+	                                               //Application Showing to Company Start
+	
+	
+	@RequestMapping(value = "/getcandidatedata",method = RequestMethod.POST)
+	public String showcandidateapplication(@RequestParam("email") String email,ModelMap mm)
+	{
+	
+		
+    //jobs
+	List<jobapplications> jobapplicationsdata	=cd.getapplications(email);
+	
+	mm.addAttribute("jobapplicationdetails",jobapplicationsdata);
+	
+	
+	
+	List<projectapplication>  projectapplicationdata=    cd.getprojectapplications(email);
+	
+	mm.addAttribute("projectapplicationdetails",projectapplicationdata);
+	
+	return "applications";
+		
+	}
+	
+	@RequestMapping("/applications")
+	public String candidateapplicationpage() {
+		
+		
+		return "applications";
+	}
 	
 	
 	
@@ -297,7 +357,7 @@ public class CompanyController {
 	@RequestMapping("/logutc")
 	public String logout(HttpSession h1)
 	{
-		h1.invalidate();
+		
 		
 		return "redirect:/loginc";
 	}

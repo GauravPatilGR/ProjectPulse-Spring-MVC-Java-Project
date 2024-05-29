@@ -6,6 +6,8 @@ public class jobapplications {
 	
 	private String companyname;
 	
+	private String companyemail;
+	
 	private String position;
 	
 	private String candidatename;
@@ -14,6 +16,24 @@ public class jobapplications {
 	
 	private String candidateresume;
 	
+	private String status;
+	
+	public String getCompanyemail() {
+		return companyemail;
+	}
+
+	public void setCompanyemail(String companyemail) {
+		this.companyemail = companyemail;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	private int cid;
 
 	public int getCid() {
