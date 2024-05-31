@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.web.servlet.tags.EscapeBodyTag;
 
 import test.beans.Company;
 import test.beans.Freelancer;
@@ -529,7 +530,7 @@ public class CompanyDao {
 
 	public List<jobapplications> getapplications(String email) {
 		
-		return t1.query("select *from jobapplications where companyemail='"+email+"'", new RowMapper<jobapplications>() {
+		return t1.query("select *from jobapplications where companyemail='"+email+"' and status='send'", new RowMapper<jobapplications>() {
 
 			@Override
 			public jobapplications mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -561,7 +562,7 @@ public class CompanyDao {
 
 	public List<projectapplication> getprojectapplications(String email) {
 		
-		return t1.query("select *from projectapplication where companyemail='"+email+"'", new RowMapper<projectapplication>() {
+		return t1.query("select *from projectapplication where companyemail='"+email+"' and status='send'", new RowMapper<projectapplication>() {
 
 			@Override
 			public projectapplication mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -583,6 +584,141 @@ public class CompanyDao {
 			
 			
 		});		
+	}
+
+	public void updatejobstatus(jobapplications c1) {
+		
+		t1.update("update jobapplications set status='"+c1.getStatus()+"' where id='"+c1.getId()+"'");
+		
+	}
+
+	public void updateprojectstatus(projectapplication c1) {
+		
+		t1.update("update projectapplication set status='"+c1.getStatus()+"' where id='"+c1.getId()+"'");
+		
+	}
+
+	 public List<jobapplications> getAcceptedApplications(String companyEmail) {
+	        
+	        
+	        return t1.query("SELECT * FROM jobapplications WHERE companyemail LIKE '%"+companyEmail+"%' AND status = 'Accepted'", new RowMapper<jobapplications>() {
+	            @Override
+	            public jobapplications mapRow(ResultSet rs, int rowNum) throws SQLException {
+	                jobapplications application = new jobapplications();
+	                
+	                application.setId(rs.getInt(1));
+	                application.setCompanyname(rs.getString(2));
+	                application.setPosition(rs.getString(3));
+	                application.setCandidatename(rs.getString(4));
+					application.setCandidateemail(rs.getString(5));
+					application.setCandidateresume(rs.getString(6));
+					application.setCid(rs.getInt(7));
+					application.setCompanyemail(rs.getString(8));
+					application.setStatus(rs.getString(9));
+	                
+	                
+	                return application;
+	            }
+	        });
+	    }
+
+	
+
+	public List<jobapplications> rejectedjobapplication(String companyemail) {
+		
+		return t1.query("SELECT * FROM jobapplications WHERE companyemail LIKE '%"+companyemail+"%' AND status = 'Rejected'", new RowMapper<jobapplications>() {
+
+			@Override
+			public jobapplications mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				jobapplications application = new jobapplications();
+                
+                application.setId(rs.getInt(1));
+                application.setCompanyname(rs.getString(2));
+                application.setPosition(rs.getString(3));
+                application.setCandidatename(rs.getString(4));
+				application.setCandidateemail(rs.getString(5));
+				application.setCandidateresume(rs.getString(6));
+				application.setCid(rs.getInt(7));
+				application.setCompanyemail(rs.getString(8));
+				application.setStatus(rs.getString(9));
+                
+                
+                return application;
+			}
+			
+			
+			
+			
+			
+		});
+		
+	}
+
+	public List<projectapplication> getacceptedprojectapplications(String companyemail) {
+	
+		return t1.query("select *from projectapplication where  companyemail  LIKE '%"+companyemail+"%' AND status = 'Accepted'" ,new RowMapper<projectapplication>() {
+
+			@Override
+			public projectapplication mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				projectapplication p1= new projectapplication();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setProjectname(rs.getString(2));
+				 p1.setProjectcompany(rs.getString(3));
+				 p1.setCandidatename(rs.getString(4));
+				 p1.setCandidateemail(rs.getString(5));
+				 p1.setCandidateresume(rs.getString(6));
+				 p1.setCdid(rs.getInt(7));
+				 p1.setProjectcompanyemail(rs.getString(8));
+				 p1.setStatus(rs.getString(9));
+				 
+				return p1;
+			}
+			
+			
+			
+			
+		});
+	}
+
+	public List<projectapplication> rejectedprojectapplication(String companyemail) {
+		
+		return t1.query("select *from projectapplication where companyemail LIKE '%"+companyemail+"%' AND status='Rejected'", new RowMapper<projectapplication>() {
+
+			@Override
+			public projectapplication mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				 projectapplication p1= new projectapplication();
+				 
+				 p1.setId(rs.getInt(1));
+				 p1.setProjectname(rs.getString(2));
+				 p1.setProjectcompany(rs.getString(3));
+				 p1.setCandidatename(rs.getString(4));
+				 p1.setCandidateemail(rs.getString(5));
+				 p1.setCandidateresume(rs.getString(6));
+				 p1.setCdid(rs.getInt(7));
+				 p1.setProjectcompanyemail(rs.getString(8));
+				 p1.setStatus(rs.getString(9));
+				 
+				 return p1;
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+		});
+		
+		
+		
+		
+		
+		
 	}
 
 	

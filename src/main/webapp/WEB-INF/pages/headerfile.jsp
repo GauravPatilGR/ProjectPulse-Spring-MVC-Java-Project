@@ -71,19 +71,25 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
+              
+              <li class="nav-item active">
+                <a class="nav-link" href="viewallfreelancer"><i class="fa-solid fa-users"></i>&nbsp;Hire</a>
+              </li>
+              
+              
                 <c:forEach items="${kk}" var="ef">
               <li class="nav-item">
                 <form action="getjobdata" method="post">
                 <input type="hidden" name="email" value="${ef.email}">
                
-               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-location-arrow" ></i> &nbsp;Job & Project History</button>
+               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-location-arrow" ></i> &nbsp;Manage </button>
                 </form>
               </li>
                <li class="nav-item">
                 <form action="getcandidatedata" method="post">
                 <input type="hidden" name="email" value="${ef.email}">
                
-               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-file-contract"></i> &nbsp;Application Received</button>
+               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-file-contract"></i> &nbsp;Application</button>
                 </form>
               </li>
               

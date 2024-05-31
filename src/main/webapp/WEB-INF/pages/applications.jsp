@@ -9,6 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Application Received</title>
  <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
+ 
 </head>
 <body>
 
@@ -18,7 +19,14 @@
   <br>
 <br>
 <br>
-   <h2> Jobs Applications&nbsp; <i class="fa-solid fa-user-check"></i></h2>
+
+ <c:forEach items="${email}" var="ec">
+ <div class="button-container">
+        <a href="accptedjobapplications/${ec.email}"><button class="btn accepted" style="color:#fff;">Accepted Applications &nbsp;<i class="fa-solid fa-clipboard-check"></i></button></a>
+        <a href="rejectedcandidate/${ec.email}"><button class="btn rejected" style="color:#fff;">Rejected Applications &nbsp; <i class="fa-regular fa-circle-xmark"></i></button></a>
+ </div>
+</c:forEach>
+   <h2>Latest Jobs Applications&nbsp; <i class="fa-solid fa-user-check"></i></h2>
 <table>
 
     <thead>
@@ -29,8 +37,9 @@
             <th scope="col">Resume</th>
             <th scope="col">Company Name</th>
             <th scope="col">Company Email</th>
-            <th scope="col">Status</th>
-            <th scope="col">Action &nbsp;<i class="fa-solid fa-list-check"></i></th>
+            
+            <th scope="col">Update Status &nbsp;<i class="fa-solid fa-list-check"></i></th>
+            
             
            
         </tr>
@@ -57,16 +66,34 @@
                 </td>
                 <td data-label="Date">${e.companyname}</td>
                 <td data-label="Date" >${e.companyemail}</td>
-                <td data-label="Date">${e.status}</td>
-                <td data-label="Date">
-                 <a href="editjob/${e.id}">Edit &nbsp;<i class="fa-regular fa-pen-to-square"></i></a>
-                 <br>
-                 <br>
-                 <br>
-                 <a href="Delete/${e.id}">Remove &nbsp;  <i class="fa-solid fa-user-xmark"></i></a>
                 
+               
+                
+                <td> 
+                 <form action="updatestatus" method="post">
+                 <input type="hidden" value="${e.id}" name="id">
+                 <select id="status" name="status"  required>
+                 <option value="${e.status}" style="color:blue;">Current:${e.status}</option>
+                 <option value="Accepted" style="color:green;">Accepted</option>
+                 <option value="Rejected" style="color:red;">Rejected</option>
+                </select>
+                <br>
+                <br>
+                <button type="submit">Update Status</button>
+                </form>
                 </td>
+                  
               
+               
+                
+                
+                
+               
+               
+              
+               
+                
+               
             </tr>
         </c:forEach>
     </tbody>
@@ -86,7 +113,7 @@
              <th scope="col">Resume</th>
             <th scope="col">Company Name</th>
              
-             <th scope="col">Status &nbsp;<i class="fa-solid fa-list-check"></i></th>
+             <th scope="col"> Update Status &nbsp;<i class="fa-solid fa-list-check"></i></th>
             
            
         </tr>
@@ -117,17 +144,25 @@
                 
                 <td data-label="Type">${ef.projectcompany}</td>
                
-                <td data-label="Date">${ef.status}</td>
+                
+                
+                <td> 
+                 <form action="updatestatusproject" method="post">
+                 <input type="hidden" value="${ef.id}" name="id">
+                 <select id="status" name="status"  required>
+                 <option value="${ef.status}" style="color:blue;">Current:${ef.status}</option>
+                 <option value="Accepted" style="color:green;">Accepted</option>
+                 <option value="Rejected" style="color:red;">Rejected</option>
+                </select>
+                <br>
+                <br>
+                <button type="submit">Update Status</button>
+                </form>
+                </td>
+                
+             
                  
               
-                 <td data-label="Date">
-                
-                 <br>
-                 <br>
-                 <br>
-                 <a href="deleteproject/${ef.id}">Remove &nbsp;  <i class="fa-solid fa-user-xmark"></i></a>
-                
-                </td>
                 
               
             </tr>
@@ -136,6 +171,52 @@
 </table>
 
 <style>
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    
+    justify-content: center;
+    align-items: center;
+   
+    margin: 0;
+    
+}
+
+.button-container {
+    text-align: center;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.accepted {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.accepted:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.rejected {
+    background-color: #f44336;
+    color: white;
+}
+
+.rejected:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
 
 body {
    background: rgb(255,255,255);

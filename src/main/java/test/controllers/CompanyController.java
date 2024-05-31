@@ -220,9 +220,9 @@ public class CompanyController {
 	{
 		cd.updatejobdata(c1);
 		
-		mm.addAttribute("messaage","Job updated successfully");
+		mm.addAttribute("messaageupdatejob","Job updated successfully");
 		
-		return "postjob";
+		return "messagepagecompany";
 		
 		
 	}
@@ -232,9 +232,9 @@ public class CompanyController {
 		
 		cd.deletebyid(id);
 		
-        mm.addAttribute("messaagedelete","Jobdetails Deleted successfully");
+        mm.addAttribute("messaagedeletejob","Jobdetails Deleted successfully");
 		   
-		return "postjob";
+		return "redirect:/messagepagecompany";
 		
 	}
 	
@@ -278,9 +278,9 @@ public class CompanyController {
 		
 		cd.removeprojectbyid(id);
 		
-		mm.addAttribute("message","Project removed successfully");
+		mm.addAttribute("messagedeleteproject","Project removed successfully");
 		
-		return "postproject";
+		return "redirect:/messagepagecompany";
 		
 	}
 	
@@ -291,7 +291,7 @@ public class CompanyController {
 	
 	
 	@RequestMapping(value = "/getcandidatedata",method = RequestMethod.POST)
-	public String showcandidateapplication(@RequestParam("email") String email,ModelMap mm)
+	public String showcandidateapplication(@RequestParam("email") String email,ModelMap mm,HttpSession h1)
 	{
 	
 		
@@ -306,6 +306,12 @@ public class CompanyController {
 	
 	mm.addAttribute("projectapplicationdetails",projectapplicationdata);
 	
+	
+	//Reuse the Method List having all data of Company
+			List<Company> companies = (List<Company>)h1.getAttribute("company");
+			
+			mm.addAttribute("email",companies);
+	
 	return "applications";
 		
 	}
@@ -316,7 +322,92 @@ public class CompanyController {
 		
 		return "applications";
 	}
+	                             
 	
+	                          //Application Showing to Company End
+	
+	
+	
+	
+	
+	                              //Job and Project Action 
+	                                      // Start
+	@RequestMapping(value = "/updatestatus",method = RequestMethod.POST)
+	public String updatejobstatus(@ModelAttribute("c1") jobapplications c1,ModelMap mm) {
+		
+		cd.updatejobstatus(c1);
+		
+		mm.addAttribute("statusmessage","Mark As Read successfully");
+		
+		return "messagepagecompany";
+	}
+	
+	
+	@RequestMapping(value = "/updatestatusproject",method = RequestMethod.POST)
+	public String updateproject(@ModelAttribute("c1") projectapplication c1,ModelMap mm)
+	{
+		cd.updateprojectstatus(c1);
+		
+		
+      mm.addAttribute("statusmessageproject","Project status update successfully");
+		
+		return "messagepagecompany";
+	}
+	
+	
+	@RequestMapping(value = "/accptedjobapplications/{companyemail}",method = RequestMethod.GET)
+	public String getacceptedapplications(@PathVariable String companyemail,ModelMap mm)
+	{
+	//job
+	List<jobapplications> getalldata	=cd.getAcceptedApplications(companyemail);
+	
+	mm.addAttribute("getallapplicationdata",getalldata);
+	
+	//Project
+	List<projectapplication>  getallprojectdata =   cd.getacceptedprojectapplications(companyemail);
+	
+	mm.addAttribute("getapplicationdataproject",getallprojectdata);
+	 
+	return "accptedjobapplications";
+		
+	}
+	
+	
+	@RequestMapping(value = "/rejectedcandidate/{companyemail}")
+	public String rejectedcandidate(@PathVariable String companyemail,ModelMap mm)
+	{
+		
+	 //job
+	  List<jobapplications> getalldatacandidate=	cd.rejectedjobapplication(companyemail);
+		
+	  mm.addAttribute("getallrejectedcandidatedata",getalldatacandidate);
+	  
+	  
+	  //project
+	  List<projectapplication>  getprojectcandidatedata =  cd.rejectedprojectapplication(companyemail);
+	  
+	  mm.addAttribute("getallrejecteddata",getprojectcandidatedata);
+	  
+	  
+	  return "rejectedcandidate";
+		
+	}
+	
+	
+	                                  
+	
+	
+	
+	
+	
+	@RequestMapping("/messagepagecompany")
+	public String messagepage() {
+		
+		
+		
+		return "messagepagecompany";
+		
+	}
 	
 	
 	//Post job webpage
