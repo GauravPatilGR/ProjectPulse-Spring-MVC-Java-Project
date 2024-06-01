@@ -14,7 +14,7 @@
 
  <h1 style="text-align:center;">My Applications &nbsp;<i class="fa-solid fa-circle-check" style="font-size:20px;"></i></h1>
   
-  <hr style="border: 5px solid blue;">
+  <hr style="border: 5px solid black;">
   <br>
 <br>
 <br>
@@ -28,6 +28,7 @@
             <th scope="col">Candidate Name</th>
             <th scope="col">Candidate Email</th>
             <th scope="col">Resume</th>
+            <th scope="col">Application Status</th>
             
            
         </tr>
@@ -39,7 +40,12 @@
                 <td data-label="Product">${e.position}</td>
                 <td data-label="Type">${e.candidatename}</td>
                 <td data-label="Price">${e.candidateemail}</td>
-                <td data-label="Date">${e.candidateresume}</td>
+                <td data-label="Date">${e.candidateresume}
+                
+                
+                
+                </td>
+                <td data-label="Date" class="status">${e.status}</td>
               
             </tr>
         </c:forEach>
@@ -59,6 +65,7 @@
             <th scope="col">Candidate Name</th>
             <th scope="col">Candidate Email</th>
             <th scope="col">Resume</th>
+            <th scope="col">Application Status</th>
             
            
         </tr>
@@ -71,6 +78,7 @@
                 <td data-label="Type">${ef.candidatename}</td>
                 <td data-label="Price">${ef.candidateemail}</td>
                 <td data-label="Date">${ef.candidateresume}</td>
+                <td data-label="Date" class="status">${ef.status}</td>
                 
               
             </tr>
@@ -78,7 +86,38 @@
     </tbody>
 </table>
 
+ 
+ 
+ <script>
+ 
+ document.addEventListener("DOMContentLoaded", function() {
+	    let statuses = document.querySelectorAll(".status");
+	    statuses.forEach(function(status) {
+	        if (status.textContent === "Accepted") {
+	            status.style.color = "green";
+	        } else if (status.textContent === "Rejected") {
+	            status.style.color = "red";
+	        }
+	        else if (status.textContent === "send") {
+	            status.style.color = "blue";
+	        }
+	    });
+	});
+
+
+ </script>
+
 <style>
+
+body {
+   background: rgb(255,255,255);
+background: -moz-linear-gradient(90deg, #48cae4 50%, #ff4d6d 50%);
+background: -webkit-linear-gradient(90deg,  #48cae4 50%, #ff4d6d 50%);
+background: linear-gradient(90deg,  #48cae4 50%, #ff4d6d 50%);
+ font-family: "Open Sans", sans-serif;
+ 
+
+}
 
 table {
   border: 1px solid #ccc;
@@ -161,6 +200,10 @@ table th {
   table td:last-child {
     border-bottom: 0;
   }
+}
+
+h1,h2{
+  color:#fff;
 }
 
 

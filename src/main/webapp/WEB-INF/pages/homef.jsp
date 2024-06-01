@@ -236,8 +236,77 @@
   </section>
 
   <!-- end experience section -->
+  
+  
+  <div class="container">
+  <div class="row boxed-portfolio">
+    <!-- Project Cards -->
+    <c:forEach items="${jobdata}" var="e">
+    
+      <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="single-project6.html" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/webimages/${e.profileimg}" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">${e.jcname}</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">${e.jtittle}</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>${e.jskills}</p>
+            <center><a href="Explorejobs"><button type="button" class="btn btn-primary">View and Apply</button></a></center>
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+    </c:forEach>
+  </div><!-- / row -->
+</div><!-- / container -->
+     
+      <center> <a href="Explorejobs" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"">View More<i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i></a></center>
+  
+<br>
+<br>
+<br>
 
- 
+<div class="container">
+  <div class="row boxed-portfolio">
+    <!-- Project Cards -->
+    <c:forEach items="${projectdata}" var="e">
+    
+      <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="single-project6.html" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/projectpng.png" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">${e.projectt}</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">${e.projectc}</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>${e.projects}</p>
+            
+            <center><a href="Exploreproject"><button type="button" class="btn btn-primary">View and Apply <i class="fa-solid fa-angles-right"></i></button></a></center>
+            
+             <a href="./files/webimages/${e.projectf}" class="download-button" download="ProjectPlus Documentation.PDF">
+          
+    Download Documentation PDF &nbsp;
+    <i class="fa-solid fa-file-arrow-down"></i></a>
+            
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+    </c:forEach>
+  </div><!-- / row -->
+</div><!-- / container -->
+     
+     
+ <center> <a href="Exploreproject" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"">View More<i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i></a></center>
   <!-- about section -->
 
   <section class="about_section layout_padding">

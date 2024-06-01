@@ -1,3 +1,6 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,6 +25,8 @@
   <link href="./files/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="./files/css/responsive.css" rel="stylesheet" />
+  
+   <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -244,84 +249,271 @@
   </section>
 
   <!-- end experience section -->
-
-  <!-- category section -->
-
-  <section class="category_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Category
-        </h2>
-      </div>
-      <div class="category_container">
-        <div class="box">
-          <div class="img-box">
-            <img src="./files/images/c1.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Design & Arts
-            </h5>
-          </div>
+  
+  
+  
+  
+  
+  
+  
+  
+                                  <div class="slider-container">
+        <div class="slider">
+            <span>Explore Project,</span>
+            <span>Jobs,</span>
+            <span>Freelancing,</span>
+            <span>Hire Freelancer,</span>
+            <span>Explore Project</span> <!-- Repeat the first item to make the loop seamless -->
         </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="./files/images/c2.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Web Development
-            </h5>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="./files/images/c3.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              SEO Markting
-            </h5>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="./files/images/c4.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Video Edting
-            </h5>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="./files/images/c5.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Logo Design
-            </h5>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="./files/images/c6.png" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Game Design
-            </h5>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+    
+    
+      <style>
+        .slider-container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            color:#ef233c;
+        }
+        .slider {
+            display: inline-block;
+            animation: slide 8s linear infinite;
+        }
+        @keyframes slide {
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 95% { transform: translateX(-300%); }
+            100% { transform: translateX(-400%); }
+        }
+    </style>
+    
+    
+    
+ 
+  <div class="content">
+      
+        <div class="card-box">
+            <div class="text-center">
+                <div class="thumb-lg member-thumb mx-auto">
+                    <img src="./files/images/gauravpatil.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                </div>
+                <input type="hidden" value="${e.id}">
+                <div>
+                    <h4>Gaurav Patil</h4>
+                    <h6>${e.femail}</h6>
+                    <p class="text-muted">Skills<span><i class="fa-brands fa-nutritionix"></i><br> </span><span><a href="#" class="text-pink">Java,Spring Boot, Spring MVC , Postgresql</a></span></p>
+                </div>
+              <a href="https://www.linkedin.com/in/gauravpatil13/" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+              <br>
+                
+                <div class="mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>350000 <i class="fa-solid fa-coins"></i></h5>
+                                <p class="mb-0 text-muted">Per Month Charge</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>BTECH<i class="fa-brands fa-google-scholar"></i></h5>
+                                <p class="mb-0 text-muted">Education</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>13/05/2001</h5>
+                                <p class="mb-0 text-muted">Date of Birth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <div class="card-box" style="background-color:#e9d8a6">
+            <div class="text-center">
+                <div class="thumb-lg member-thumb mx-auto">
+                    <img src="./files/images/rohitwagh.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                </div>
+                <input type="hidden" value="${e.id}">
+                <div>
+                    <h4>Rohit Waghmare</h4>
+                    <h6>${e.femail}</h6>
+                    <p class="text-muted">Skills<span><i class="fa-brands fa-nutritionix"></i><br> </span><span><a href="#" class="text-pink">Java, Jirs, Manual Testing ,Automation,Selenium</a></span></p>
+                </div>
+              <a href="https://www.linkedin.com/in/rohitwaghmare-rohit/" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+              <br>
+                
+                <div class="mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>40000 <i class="fa-solid fa-coins"></i></h5>
+                                <p class="mb-0 text-muted">Per Month Charge</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>BTECH<i class="fa-brands fa-google-scholar"></i></h5>
+                                <p class="mb-0 text-muted">Education</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>03/01/1997</h5>
+                                <p class="mb-0 text-muted">Date of Birth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <div class="card-box" style="background-color:#94d2bd;">
+            <div class="text-center">
+                <div class="thumb-lg member-thumb mx-auto">
+                    <img src="./files/images/vaibhavsir.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                </div>
+                <input type="hidden" value="${e.id}">
+                <div>
+                    <h4>Vaibhav Barde</h4>
+                    <h6>${e.femail}</h6>
+                    <p class="text-muted">Skills<span><i class="fa-brands fa-nutritionix"></i><br> </span><span><a href="#" class="text-pink">.NET, MVC,PHP ,SQL,React js</a></span></p>
+                </div>
+              <a href="https://www.linkedin.com/in/vaibhav-barde1/" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
+              <br>
+                
+                <div class="mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>50000 <i class="fa-solid fa-coins"></i></h5>
+                                <p class="mb-0 text-muted">Per Month Charge</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>BCA<i class="fa-brands fa-google-scholar"></i></h5>
+                                <p class="mb-0 text-muted">Education</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-3">
+                                <h5>24/08/1997</h5>
+                                <p class="mb-0 text-muted">Date of Birth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+</div>
+   
+    <center> <a href="loginc" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"">View More<i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i></a></center>
 
-
-  <!-- end category section -->
-
+ 
+ 
+ <br>
+ <br>
+ 
+ 
+ <!-- Company Info section -->
+     
+    
+    <div class="container">
+  <div class="row boxed-portfolio">
+    <!-- Project Cards -->
+    
+    
+      <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="single-project6.html" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/capgemini.jpg" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">Capgemini</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Java Developer</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Spring Boot,SPring MVC ,DSA</p>
+            <center><a href="loginf"><button type="button" class="btn btn-primary">View and Apply</button></a></center>
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+      
+      <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="single-project6.html" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/infosys.gif" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">Infosys</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Business analyst</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Analytical,
+Communication skills,
+Critical thinking,Interpersonal communication,
+Negotiation</p>
+            <center><a href="loginf"><button type="button" class="btn btn-primary">View and Apply</button></a></center>
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+      
+      <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="single-project6.html" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/wipro.png" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">Wipro</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Python developer</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Version control,
+Machine learning and AI,
+Python libraries,
+Debugging,
+Object relational mapper,
+OOP concepts,
+Python frameworks,
+Analytical skills,
+Core python expertise</p>
+            <center><a href="loginf"><button type="button" class="btn btn-primary">View and Apply</button></a></center>
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+   
+   
+                     
+   
+   
+  </div><!-- / row -->
+</div><!-- / container -->
+     
+       <center> <a href="loginf" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"">View More & Apply  &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></center>
+  
+  
+    
+    
+  
   <!-- about section -->
 
   <section class="about_section layout_padding">
@@ -666,6 +858,105 @@ Our mission is simple: to provide a platform where clients can access a diverse 
   <script src="./files/js/jquery-3.4.1.min.js"></script>
   <script src="./files/js/bootstrap.js"></script>
   <script src="./files/js/custom.js"></script>
+  
+  <style><style>
+  
+  
+  
+    body {
+        background: #bbd0ff;
+        
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card-box {
+        flex: 0 0 30%; /* Adjust the width as needed */
+        margin: 10px;
+        padding: 20px;
+        border-radius: 3px;
+        background-color: #97dffc;
+        border-radius:30px;
+        
+        
+    }
+
+    .social-links li a {
+        border-radius: 50%;
+        color: rgba(121, 121, 121, .8);
+        display: inline-block;
+        height: 30px;
+        line-height: 27px;
+        border: 2px solid rgba(121, 121, 121, .5);
+        text-align: center;
+        width: 30px
+    }
+
+    .social-links li a:hover {
+        color: #797979;
+        border: 2px solid #797979
+    }
+
+    .thumb-lg {
+        height: 88px;
+        width: 88px;
+    }
+
+    .img-thumbnail {
+        padding: .25rem;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: .25rem;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text-pink {
+        color: #ff679b!important;
+    }
+
+    .btn-rounded {
+        border-radius: 2em;
+    }
+
+    .text-muted {
+        color: black;
+    }
+
+    h4 {
+        line-height: 22px;
+        font-size: 18px;
+        
+        
+    }
+    
+  
+    
+    body {
+  
+  background: lighten(#0E76A8,45%);
+}
+	.btn-linkedin {
+	  background: #0E76A8;
+	  border-radius: 0;
+	  color: #fff;
+	  border-width: 1px;
+	  border-style: solid;
+	  border-color: #084461;
+	}
+	.btn-linkedin:link, .btn-linkedin:visited {
+	  color: #fff;
+	}
+	.btn-linkedin:active, .btn-linkedin:hover {
+	  background: #084461;
+	  color: #fff;
+	}
+</style>
+  </style>
 
 
 </body>

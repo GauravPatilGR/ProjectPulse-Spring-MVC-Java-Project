@@ -112,6 +112,16 @@ public class FreelancerController {
 	  {
 		  return "loginf";
 	  }
+	  
+	//jobs
+	List<showjob>  jobdata  = fd.getjobdataofcompany();
+	
+	mm.addAttribute("jobdata",jobdata);
+	
+	//project
+	List<postproject>   projectdata =   fd.getprojectdataofcompany();
+	
+	mm.addAttribute("projectdata",projectdata);
 		
 	    mm.addAttribute("kkk",freelancerdata);
 	    
@@ -264,22 +274,22 @@ public class FreelancerController {
 		
 	}
 	
-	@RequestMapping(value = "/myapplication/{cid}")
-	public String trackjob(@PathVariable int cid,ModelMap mm) {
+	@RequestMapping(value = "/freelancerapplication/{femail}")
+	public String trackjob(@PathVariable String femail,ModelMap mm) {
 	
     //show job
-	List<jobapplications> jobdata	=fd.trackapplication(cid);
+	List<jobapplications> jobdata	=fd.trackapplication(femail);
 	
 	mm.addAttribute("jobapplication",jobdata);
 	
 	
 	//show project
-    List<projectapplication>   projectdata  =fd.trackprojectapplications(cid);
+    List<projectapplication>   projectdata  =fd.trackprojectapplications(femail);
     
     mm.addAttribute("projectapplication",projectdata);
     
                 
-    fd.withdrawjobapplication(cid); 
+   
                
               
 		

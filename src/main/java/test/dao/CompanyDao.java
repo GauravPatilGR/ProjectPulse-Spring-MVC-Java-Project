@@ -270,9 +270,9 @@ public class CompanyDao {
 		
 	}
 
-	public List<jobapplications> trackapplication(int cid) {
+	public List<jobapplications> trackapplication(String femail) {
 	
-		return t1.query("select *from jobapplications where cid='"+cid+"'", new RowMapper<jobapplications>() {
+		return t1.query("select *from jobapplications where candidateemail LIKE '%"+femail+"%' and companyemail IS NOT NULL", new RowMapper<jobapplications>() {
 
 			@Override
 			public jobapplications mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -286,6 +286,7 @@ public class CompanyDao {
 				j1.setCandidateemail(rs.getString(5));
 				j1.setCandidateresume(rs.getString(6));
 				j1.setCid(rs.getInt(7));
+				j1.setStatus(rs.getString(9));
 				
 				return j1;
 			}
@@ -296,9 +297,9 @@ public class CompanyDao {
 		
 	}
 
-	public List<projectapplication> trackprojectapplications(int cid) {
+	public List<projectapplication> trackprojectapplications(String femail) {
 		
-		return t1.query("select *from projectapplication where cdid='"+cid+"'", new RowMapper<projectapplication>() {
+		return t1.query("select *from projectapplication where candidateemail LIKE '%"+femail+"%' and companyemail IS NOT NULL", new RowMapper<projectapplication>() {
 
 			@Override
 			public projectapplication mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -312,7 +313,7 @@ public class CompanyDao {
 				 p1.setCandidateemail(rs.getString(5));
 				 p1.setCandidateresume(rs.getString(6));
 				 p1.setCdid(rs.getInt(7));
-				 
+				 p1.setStatus(rs.getString(9));
 				return p1;
 			}
 			
@@ -720,6 +721,70 @@ public class CompanyDao {
 		
 		
 	}
+
+	public List<showjob> getjobdataofcompany() {
+		
+		return t1.query("SELECT * FROM postjob RIGHT JOIN company ON postjob.jcname = company.name WHERE postjob.jcname IS NOT NULL AND company.name IS NOT NULL AND postjob.id IS NOT NULL ORDER BY RANDOM() LIMIT 3", new RowMapper<showjob>() {
+
+			@Override
+			public showjob mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				showjob p = new showjob();
+				p.setId(rs.getInt(1));
+				p.setJobd(rs.getString(2));
+				p.setJtittle(rs.getString(3));
+				p.setJskills(rs.getString(4));
+				p.setJtype(rs.getString(5));
+				p.setJsalary(rs.getString(6));
+				p.setJcname(rs.getString(7));
+				p.setJcemail(rs.getString(8));
+				p.setAbout(rs.getString(17));
+				p.setProfileimg(rs.getString(16));
+				
+				
+				return p;
+			}
+			
+			
+			
+			
+			
+			
+		});
+		
+
+		
+	}
+
+	public List<postproject> getprojectdataofcompany() {
+		
+		return t1.query("select *from postproject ORDER BY RANDOM() LIMIT 3", new RowMapper<postproject>() {
+
+			@Override
+			public postproject mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				postproject pp= new postproject();
+				pp.setId(rs.getInt(1));
+				pp.setProjectd(rs.getString(2));
+				pp.setProjectf(rs.getString(3));
+				pp.setProjectb(rs.getString(4));
+				pp.setProjectt(rs.getString(5));
+				pp.setProjects(rs.getString(6));
+				pp.setProjectc(rs.getString(7));
+				pp.setProjecte(rs.getString(8));
+				
+		       
+				
+				return pp;
+			}
+			
+			
+			
+			
+			
+		});
+	}
+
 
 	
 	
