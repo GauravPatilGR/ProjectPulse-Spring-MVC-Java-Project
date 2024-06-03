@@ -785,7 +785,33 @@ public class CompanyDao {
 		});
 	}
 
+	
+	//count freelancer
+	public int getcountoffrrlancer() {
+		
+		
+		return t1.queryForObject("SELECT COUNT(*) FROM freelancer", Integer.class);
 
+	}
+
+	//count jobs
+	public int getcountjobs() {
+		
+		return t1.queryForObject("select COUNT(*) from postjob", Integer.class);
+		
+	}
+
+	public int getcountproject() {
+		
+		return t1.queryForObject("select COUNT(*) FROM postproject", Integer.class);
+		
+	}
+
+	public int getcountcompany() {
+		
+		return t1.queryForObject("select COUNT(*) FROM company", Integer.class);
+		
+	}
 	
 	
 

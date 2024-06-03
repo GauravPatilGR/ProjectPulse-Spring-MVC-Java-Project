@@ -293,10 +293,7 @@
             
             <center><a href="Exploreproject"><button type="button" class="btn btn-primary">View and Apply <i class="fa-solid fa-angles-right"></i></button></a></center>
             
-             <a href="./files/webimages/${e.projectf}" class="download-button" download="ProjectPlus Documentation.PDF">
-          
-    Download Documentation PDF &nbsp;
-    <i class="fa-solid fa-file-arrow-down"></i></a>
+             
             
           </div><!-- / card-body -->
         </div><!-- / card -->
@@ -351,14 +348,14 @@ Our mission is simple: to provide a platform where clients can access a diverse 
               <div class="tab_container">
                 <div class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="img-box">
-                    <img src="./files/images/f1.png" alt="">
+                    <img src="./files/images/pngegg (1).png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
-                      $250 Million
+                      ${countfreelancer}
                     </h5>
                     <h3>
-                      Paid to Freelancers
+                       Worldwide Freelancer
                     </h3>
                   </div>
                 </div>
@@ -368,10 +365,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      2 Million
+                      ${countjobs}
                     </h5>
                     <h3>
-                      Paid Invoices
+                      Total Jobs Listings
                     </h3>
                   </div>
                 </div>
@@ -381,10 +378,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      700,000
+                      ${countproject}
                     </h5>
                     <h3>
-                      Worldwide Freelancer
+                      Total Freelancing Projects
                     </h3>
                   </div>
                 </div>
@@ -394,11 +391,11 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      98%
+                     ${countcompany}
                     </h5>
                     <h3>
-                      Customer <br>
-                      Satisfaction Rate
+                      Total Partners  <br>
+                      Companies
                     </h3>
                   </div>
                 </div>
@@ -492,6 +489,85 @@ Our mission is simple: to provide a platform where clients can access a diverse 
       </div>
     </div>
   </section>
+  
+  <style>
+  
+  .hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.white .hovereffect .overlay {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-overlay .hovereffect .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  
+   text-align:center;
+  border-top: 5px solid;
+  border-image:   linear-gradient(to right, grey 25%, yellow 25%, yellow 50%,red 50%, red 75%, teal 75%) 5;
+}
+
+.no-image-border .hovereffect img {
+  border: none;
+  border-radius: 5px;
+}
+
+.no-image-border.no-gutter .hovereffect img, .no-image-border.no-gutter .hovereffect .overlay {
+  border: none;
+  border-radius: 0;
+}
+
+.hovereffect:hover img {
+  -webkit-transform: rotate(-7deg) scale(1.33);
+  -ms-transform: rotate(-7deg) scale(1.33);
+  transform: rotate(-7deg) scale(1.33);
+}
+
+.hovereffect-title .project-title-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  margin-top: -32px;
+  width: 100%;
+  padding: 10px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.project:hover .hovereffect-title .project-title-wrapper {
+  top: 50%;
+}
+  
+  
+  </style>
 
   <!-- end client section -->
 

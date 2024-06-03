@@ -41,6 +41,9 @@ public class CompanyController {
 	
 	
 	
+	
+	
+	
 	//Mapping for Register
 	@RequestMapping(value = "/regdata",method = RequestMethod.POST)
 	public String registerdata(@ModelAttribute ("c1") Company c1,@RequestParam("filename") MultipartFile filename) throws IOException 
@@ -121,6 +124,30 @@ public class CompanyController {
 		
 	List<Freelancer> freelancerdata=	cd.showafreelancer();
 	mm.addAttribute("freelancerdta",freelancerdata);
+	
+	
+	    //count freelancer   
+		int freelancerdatacount =   cd.getcountoffrrlancer();
+		System.out.println(data);
+		mm.addAttribute("countfreelancer",freelancerdatacount);
+		
+		//jobs count
+		int jobdatacount = cd.getcountjobs();
+		System.out.println(jobdatacount);
+		mm.addAttribute("countjobs",jobdatacount);
+		
+		//project count
+	    int projectdatacount= cd.getcountproject();
+	    System.out.println(projectdatacount);
+	    mm.addAttribute("countproject",projectdatacount);
+	    
+	    //company count
+		int companydatacount=cd.getcountcompany();
+		System.out.println(companydatacount);
+		mm.addAttribute("countcompany",companydatacount);
+	
+	
+	
 		
 		mm.addAttribute("kk",companies);
 		return "homec";

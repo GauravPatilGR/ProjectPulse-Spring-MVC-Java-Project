@@ -113,16 +113,36 @@ public class FreelancerController {
 		  return "loginf";
 	  }
 	  
-	//jobs
+	//jobs data show
 	List<showjob>  jobdata  = fd.getjobdataofcompany();
 	
 	mm.addAttribute("jobdata",jobdata);
 	
-	//project
+	//project data show
 	List<postproject>   projectdata =   fd.getprojectdataofcompany();
 	
-	mm.addAttribute("projectdata",projectdata);
-		
+	    mm.addAttribute("projectdata",projectdata);
+	    
+	//count freelancer   
+	int data =   fd.getcountoffrrlancer();
+	System.out.println(data);
+	mm.addAttribute("countfreelancer",data);
+	
+	//jobs count
+	int jobdatacount = fd.getcountjobs();
+	System.out.println(jobdatacount);
+	mm.addAttribute("countjobs",jobdatacount);
+	
+	//project count
+    int projectdatacount= fd.getcountproject();
+    System.out.println(projectdatacount);
+    mm.addAttribute("countproject",projectdatacount);
+    
+    //company count
+	int companydatacount=fd.getcountcompany();
+	System.out.println(companydatacount);
+	mm.addAttribute("countcompany",companydatacount);
+	
 	    mm.addAttribute("kkk",freelancerdata);
 	    
 		return "homef";

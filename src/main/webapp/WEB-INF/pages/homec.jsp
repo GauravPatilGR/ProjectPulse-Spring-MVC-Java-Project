@@ -376,14 +376,14 @@ Our mission is simple: to provide a platform where clients can access a diverse 
               <div class="tab_container">
                 <div class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="img-box">
-                    <img src="./files/images/f1.png" alt="">
+                    <img src="./files/images/pngegg (1).png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
-                      $250 Million
+                      ${countfreelancer}
                     </h5>
                     <h3>
-                      Paid to Freelancers
+                       Worldwide Freelancer
                     </h3>
                   </div>
                 </div>
@@ -393,10 +393,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      2 Million
+                      ${countjobs}
                     </h5>
                     <h3>
-                      Paid Invoices
+                      Total Jobs Listings
                     </h3>
                   </div>
                 </div>
@@ -406,10 +406,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      700,000
+                      ${countproject}
                     </h5>
                     <h3>
-                      Worldwide Freelancer
+                      Total Freelancing Projects
                     </h3>
                   </div>
                 </div>
@@ -419,11 +419,11 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      98%
+                     ${countcompany}
                     </h5>
                     <h3>
-                      Customer <br>
-                      Satisfaction Rate
+                      Total Partners  <br>
+                      Companies
                     </h3>
                   </div>
                 </div>

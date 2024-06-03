@@ -38,9 +38,9 @@
           <a class="navbar-brand" href="index.html">
             <img src="./files/images/logo.png" alt="" />
             <span>
-             ProjectPulse
+             ProjectPulse++
             </span>
-          </a>++
+          </a>
           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -298,7 +298,7 @@
  
   <div class="content">
       
-        <div class="card-box">
+        <div class="card-box ">
             <div class="text-center">
                 <div class="thumb-lg member-thumb mx-auto">
                     <img src="./files/images/gauravpatil.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
@@ -337,10 +337,10 @@
             </div>
         </div>
         
-         <div class="card-box" style="background-color:#e9d8a6">
+         <div class="card-box " style="background-color:#e9d8a6">
             <div class="text-center">
                 <div class="thumb-lg member-thumb mx-auto">
-                    <img src="./files/images/rohitwagh.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                    <img src="./files/images/rohitwagh.jpg" class="rounded-circle img-thumbnail " alt="profile-image">
                 </div>
                 <input type="hidden" value="${e.id}">
                 <div>
@@ -376,7 +376,7 @@
             </div>
         </div>
         
-         <div class="card-box" style="background-color:#94d2bd;">
+         <div class="card-box " style="background-color:#94d2bd;">
             <div class="text-center">
                 <div class="thumb-lg member-thumb mx-auto">
                     <img src="./files/images/vaibhavsir.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
@@ -436,7 +436,7 @@
       <div class="col-md-3 col-lg-4">
         <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
           <figure class="portfolio-item">
-            <a href="single-project6.html" class="hovereffect">
+            <a href="loginf" class="hovereffect">
               
             <img class="img-responsive" src="./files/images/capgemini.jpg" alt="" width=300px>
               <div class="overlay"></div><!-- / overlay -->
@@ -455,7 +455,7 @@
       <div class="col-md-3 col-lg-4">
         <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
           <figure class="portfolio-item">
-            <a href="single-project6.html" class="hovereffect">
+            <a href="loginf" class="hovereffect">
               
             <img class="img-responsive" src="./files/images/infosys.gif" alt="" width=300px>
               <div class="overlay"></div><!-- / overlay -->
@@ -477,7 +477,7 @@ Negotiation</p>
       <div class="col-md-3 col-lg-4">
         <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
           <figure class="portfolio-item">
-            <a href="single-project6.html" class="hovereffect">
+            <a href="loginf" class="hovereffect">
               
             <img class="img-responsive" src="./files/images/wipro.png" alt="" width=300px>
               <div class="overlay"></div><!-- / overlay -->
@@ -512,6 +512,92 @@ Core python expertise</p>
   
   
     
+    <br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row boxed-portfolio">
+    <!-- Project Cards -->
+    
+    
+      <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="loginf" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/projectpng.png" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">
+Health administration</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Gauravinfo Technologies</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Spring Boot,Spring MVC,Postgresql,Hibernate,SQL</p>
+            
+            <center><a href="loginf"><button type="button" class="btn btn-primary">View and Apply <i class="fa-solid fa-angles-right"></i></button></a></center>
+            
+             
+            
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+      
+       <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="loginf" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/projectpng.png" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">
+Employee tracking system</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Qualcomm</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>.NET,MVC,C#</p>
+            
+            <center><a href="loginf"><button type="button" class="btn btn-primary">View and Apply <i class="fa-solid fa-angles-right"></i></button></a></center>
+            
+             
+            
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+      
+       <div class="col-md-3 col-lg-4">
+        <div class="card mb-4 project" data-groups="[&quot;skill1&quot;]">
+          <figure class="portfolio-item">
+            <a href="loginf" class="hovereffect">
+              
+            <img class="img-responsive" src="./files/images/projectpng.png" alt="" width=300px>
+              <div class="overlay"></div><!-- / overlay -->
+            </a><!-- / hovereffect -->
+          </figure><!-- / portfolio-item -->
+          <div class="card-body">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">
+Building chatbots</a>
+            <br>
+            <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Wipro Technologies</a>
+            <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Python,AI,ML,Flask,MongoDB</p>
+            
+            <center><a href="loginf"><button type="button" class="btn btn-primary">View and Apply <i class="fa-solid fa-angles-right"></i></button></a></center>
+            
+             
+            
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / col-md-6 -->
+  
+  </div><!-- / row -->
+</div><!-- / container -->
+     
+     
+ <center> <a href="loginf" title="LinkedIn" class="btn btn-linkedin btn-lg" style="background-color:#3a86ff;"">View More<i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i></a></center>
     
   
   <!-- about section -->
@@ -542,7 +628,7 @@ Our mission is simple: to provide a platform where clients can access a diverse 
 
   <!-- end about section -->
 
-  <!-- freelance section -->
+ <!-- freelance section -->
 
   <section class="freelance_section ">
     <div id="accordion">
@@ -558,14 +644,14 @@ Our mission is simple: to provide a platform where clients can access a diverse 
               <div class="tab_container">
                 <div class="t-link-box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="img-box">
-                    <img src="./files/images/f1.png" alt="">
+                    <img src="./files/images/pngegg (1).png" alt="">
                   </div>
                   <div class="detail-box">
                     <h5>
-                      $250 Million
+                      250+
                     </h5>
                     <h3>
-                      Paid to Freelancers
+                       Worldwide Freelancer
                     </h3>
                   </div>
                 </div>
@@ -575,10 +661,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      2 Million
+                      500+
                     </h5>
                     <h3>
-                      Paid Invoices
+                      Total Jobs Listings
                     </h3>
                   </div>
                 </div>
@@ -588,10 +674,10 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      700,000
+                      250+
                     </h5>
                     <h3>
-                      Worldwide Freelancer
+                      Total Freelancing Projects
                     </h3>
                   </div>
                 </div>
@@ -601,11 +687,11 @@ Our mission is simple: to provide a platform where clients can access a diverse 
                   </div>
                   <div class="detail-box">
                     <h5>
-                      98%
+                     989+
                     </h5>
                     <h3>
-                      Customer <br>
-                      Satisfaction Rate
+                      Total Partners  <br>
+                      Companies
                     </h3>
                   </div>
                 </div>
@@ -640,7 +726,9 @@ Our mission is simple: to provide a platform where clients can access a diverse 
   </section>
 
   <!-- end freelance section -->
-
+ 
+ 
+ 
   <!-- client section -->
 
   <section class="client_section layout_padding">
@@ -955,7 +1043,85 @@ Our mission is simple: to provide a platform where clients can access a diverse 
 	  background: #084461;
 	  color: #fff;
 	}
-</style>
+	
+	<style>
+  
+  .hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 5px;
+}
+
+.white .hovereffect .overlay {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-overlay .hovereffect .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+ 
+  text-align:center;
+  border-top: 5px solid;
+  border-image:   linear-gradient(to right, grey 25%, yellow 25%, yellow 50%,red 50%, red 75%, teal 75%) 5;
+}
+
+.no-image-border .hovereffect img {
+  border: none;
+  border-radius: 5px;
+}
+
+.no-image-border.no-gutter .hovereffect img, .no-image-border.no-gutter .hovereffect .overlay {
+  border: none;
+  border-radius: 0;
+}
+
+.hovereffect:hover img {
+  -webkit-transform: rotate(-7deg) scale(1.33);
+  -ms-transform: rotate(-7deg) scale(1.33);
+  transform: rotate(-7deg) scale(1.33);
+}
+
+.hovereffect-title .project-title-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  margin-top: -32px;
+  width: 100%;
+  padding: 10px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.project:hover .hovereffect-title .project-title-wrapper {
+  top: 50%;
+}
+  
+  
+  
   </style>
 
 
