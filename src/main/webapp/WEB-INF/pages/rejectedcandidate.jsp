@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Application Received</title>
+<title>Rejected Applications</title>
+<link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
  <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
  
 </head>

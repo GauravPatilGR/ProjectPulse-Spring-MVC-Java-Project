@@ -12,7 +12,8 @@
   <!-- Site Metas -->
  
 
-  <title>Homepage</title>
+  <title>explore-projects</title>
+  <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
 
  
 </head>

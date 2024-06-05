@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Company Profile</title>
+    <title>Listed-companies</title>
+    <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
     <style>
         body {

@@ -18,6 +18,8 @@
   <meta name="author" content="" />
 
   <title>Welcome</title>
+  
+  <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="./files/css/bootstrap.css" />

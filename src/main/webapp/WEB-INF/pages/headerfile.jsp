@@ -28,6 +28,8 @@
   <!-- responsive style -->
   <link href="./files/css/responsive.css" rel="stylesheet" />
   
+    <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
+  
    <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -69,7 +71,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
+                <a class="nav-link" href="homec"><i class="fa-solid fa-house"></i> &nbsp;Home</a>
               </li>
               
               <li class="nav-item active">
@@ -82,14 +84,14 @@
                 <form action="getjobdata" method="post">
                 <input type="hidden" name="email" value="${ef.email}">
                
-               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-location-arrow" ></i> &nbsp;Manage </button>
+               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-location-arrow" ></i> &nbsp;Manage Jobs and Projects</button>
                 </form>
               </li>
                <li class="nav-item">
                 <form action="getcandidatedata" method="post">
                 <input type="hidden" name="email" value="${ef.email}">
                
-               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-file-contract"></i> &nbsp;Application</button>
+               <button type="submit" style="background-color: transparent !important; border:none; color:#fff;"><i class="fa-solid fa-file-contract"></i> &nbsp;Candidates Applications</button>
                 </form>
               </li>
               

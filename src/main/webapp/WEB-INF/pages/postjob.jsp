@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Member Registration</title>
+    <title>Post-Job</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -209,7 +209,9 @@
      
     </style>
     
-     <link rel="stylesheet" href="style.css" />
+   
+     
+       <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
     
   </head>
   <body>
@@ -228,74 +230,94 @@
            
     
     <div class="testbox">
-      <form action="postjobdata" method="post">
-        <div class="banner">
-      <h1>Post job <i class="fa-solid fa-briefcase"></i> ,What you need done?</h1>
-        </div>
-        <div class="colums">
-          <div class="item">
+     <form id="postJobForm" action="postjobdata" method="post">
+    <div class="banner">
+        <h1>Post job <i class="fa-solid fa-briefcase"></i>, What you need done?</h1>
+    </div>
+    <div class="colums">
+        <div class="item">
             <label for="fname">Job description<span>*</span></label>
-            <textarea id="myTextArea" name="jobd" rows="4" cols="50">
-              
-          </textarea>
-          </div>
-          <div class="item">
-            <label for="lname">Job Tittle<span>*</span></label>
-            <input type="text" id="fileInput" name="jtittle" placeholder="Software Engineer">
-             <br>
-           
-            <br>
-          </div>
-          <br><br>
-          <div class="item">
-            <label for="address1">Relevent skills need for this job?<span>*</span></label>
+            <textarea id="jobDescription" name="jobd" rows="4" cols="50"></textarea>
+        </div>
+        <div class="item">
+            <label for="lname">Job Title<span>*</span></label>
+            <input type="text" id="jobTitle" name="jtittle" placeholder="Software Engineer" required />
+        </div>
+        <br><br>
+        <div class="item">
+            <label for="address1">Relevant skills needed for this job?<span>*</span></label>
             <br>
             <small>Enter up to 5 skills that best describe your project. Freelancers will use these skills to find projects they are most interested and experienced in.</small>
-            <input id="address1" height="50px"   name="jskills" required/>
-            <h6>Suggested skills:
-              MySQL,
-              Web Hosting,
-              Software Testing,
-              Engineering,
-              Software Architecture</h6>
-          </div>
-          <br><br>
-         
-         
-        
+            <input id="skills" name="jskills" required />
+            <h6>Suggested skills: MySQL, Web Hosting, Software Testing, Engineering, Software Architecture</h6>
+        </div>
+        <br><br>
         <div class="question">
-          <label>How would you like to get it done?</label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="Full Time Role" id="radio_1" name="jtype"/>
-              <label for="radio_1"  class="radio"><span>Full Time Role</span></label>
+            <label>How would you like to get it done?</label>
+            <div class="question-answer">
+                <div>
+                    <input type="radio" value="Full Time Role" id="radio_1" name="jtype" required />
+                    <label for="radio_1" class="radio"><span>Full Time Role</span></label>
+                </div>
+                <div>
+                    <input type="radio" value="Freelancing" id="radio_2" name="jtype" required />
+                    <label for="radio_2" class="radio"><span>Freelancing</span></label>
+                </div>
             </div>
-            <div>
-              <input  type="radio" value="Freelancing" id="radio_2" name="jtype" />
-              <label for="radio_2" class="radio"><span>Freelancing</span></label>
-            </div>
-           
-          </div>
         </div>
         <div class="question">
-          <label>What is your estimated budget or Salary?</label>
-           <input  type="text"  name="jsalary" placeholder="10000,20000"/>
-           
-           <c:forEach items="${kk}" var="e">
-            <input  type="hidden"  name="jcname" value="${e.name}"/>
-            
-             <input  type="hidden"  name="jcemail" value="${e.email}"/>
-         </c:forEach>
-          <br>
+            <label>What is your estimated budget or Salary?</label>
+            <input type="text" id="budget" name="jsalary" placeholder="10000,20000" required pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid number." />
+            <c:forEach items="${kk}" var="e">
+                <input type="hidden" name="jcname" value="${e.name}" />
+                <input type="hidden" name="jcemail" value="${e.email}" />
+            </c:forEach>
+            <br>
         </div>
-          <h4>${messaage}</h4>
-          <h4>${messaagedelete}</h4>
-          
-        
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+        <h4>${messaage}</h4>
+        <h4>${messaagedelete}</h4>
+        <button type="submit">Submit</button>
     </div>
+</form>
+    </div>
+    
+    <script>
+document.getElementById('postJobForm').addEventListener('submit', function(event) {
+    var form = event.target;
+    var jobDescription = form.elements['jobd'].value.trim();
+    var jobTitle = form.elements['jtittle'].value.trim();
+    var skills = form.elements['jskills'].value.trim();
+    var budget = form.elements['jsalary'].value.trim();
+
+    // Ensure job description is not empty
+    if (jobDescription === "") {
+        alert('Job description cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure job title is not empty
+    if (jobTitle === "") {
+        alert('Job title cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure skills are not empty
+    if (skills === "") {
+        alert('Please enter relevant skills.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure budget is a valid number
+    if (!/^\d+(\.\d{1,2})?$/.test(budget)) {
+        alert('Please enter a valid budget or salary.');
+        event.preventDefault();
+        return;
+    }
+});
+</script>
     
     
     

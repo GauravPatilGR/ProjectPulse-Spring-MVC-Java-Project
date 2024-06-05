@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Comapany Info</title>
+<title>view-apply project</title>
+<link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
 <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -44,37 +45,72 @@
     
     
       <div class="form-popup" id="applyForm">
-        <form action="/SpringMVCPersonal_Project/applyforproject" method="post" enctype="multipart/form-data"  class="form-container">
-            <h2>Job Application</h2>
+       <form id="projectApplicationForm" action="/SpringMVCPersonal_Project/applyforproject" method="post" enctype="multipart/form-data" class="form-container">
+    <h2>Job Application</h2>
 
-            <label for="name"><b>Project Name</b></label>
-            <input type="text" placeholder="Enter Your Name" name="projectname" value="${ef.projectt}" required readonly>
+    <label for="projectname"><b>Project Name</b></label>
+    <input type="text" id="projectname" placeholder="Enter Project Name" name="projectname" value="${ef.projectt}" required readonly>
 
-             <label for="email"><b>Project Organization</b></label>
-            <input type="text" placeholder="Enter Your Email" value="${ef.projectc}" name="projectcompany" required readonly>
-            
-            <input type="text" placeholder="Enter Your Email" value="${ef.projecte}" name="projectcompanyemail" required readonly>
-            
-            
-           <c:forEach items="${profile}" var="e">
-             <label for="email"><b>Candidate Name</b></label>
-            <input type="text" placeholder="Enter Your Email" value="${e.fname}" name="candidatename">
-            
+    <label for="projectcompany"><b>Project Organization</b></label>
+    <input type="text" id="projectcompany" placeholder="Enter Project Organization" name="projectcompany" value="${ef.projectc}" required readonly>
 
-            <label for="resume"><b>Candidate Email</b></label>
-            <input type="text" placeholder="Enter Your Email"  value="${e.femail}" name="candidateemail">
-              <input type="hidden" placeholder="Enter Your Email"  value="${e.id}" name="cdid">
-            </c:forEach>
-             <label for="resume"><b>Resume</b></label>
-            <input type="file" name="resume" accept=".pdf" >
-            
-             <input type="hidden" placeholder="Enter Your Email"  value="send" name="status">
+    <label for="projectcompanyemail"><b>Project Organization Email</b></label>
+    <input type="email" id="projectcompanyemail" placeholder="Enter Project Organization Email" name="projectcompanyemail" value="${ef.projecte}" required readonly>
 
-            <button type="submit" class="btn">Submit</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
+    <c:forEach items="${profile}" var="e">
+        <label for="candidatename"><b>Candidate Name</b></label>
+        <input type="text" id="candidatename" placeholder="Enter Candidate Name" name="candidatename" value="${e.fname}" required>
+
+        <label for="candidateemail"><b>Candidate Email</b></label>
+        <input type="email" id="candidateemail" placeholder="Enter Candidate Email" name="candidateemail" value="${e.femail}" required>
+
+        <input type="hidden" name="cdid" value="${e.id}">
+    </c:forEach>
+
+    <label for="resume"><b>Resume</b></label>
+    <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+    <input type="hidden" name="status" value="send">
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
     </div>
    
+   
+   <script>
+document.getElementById('projectApplicationForm').addEventListener('submit', function(event) {
+    var form = event.target;
+    var candidateName = form.elements['candidatename'].value.trim();
+    var candidateEmail = form.elements['candidateemail'].value.trim();
+    var resume = form.elements['resume'].value.trim();
+
+    // Ensure candidate name is not empty
+    if (candidateName === "") {
+        alert('Candidate name cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure candidate email is valid
+    if (candidateEmail === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(candidateEmail)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure a resume is uploaded
+    if (resume === "") {
+        alert('Please upload your resume in PDF format.');
+        event.preventDefault();
+        return;
+    }
+});
+
+function closeForm() {
+    // Add functionality to close the form if needed
+}
+</script>
    
    
    

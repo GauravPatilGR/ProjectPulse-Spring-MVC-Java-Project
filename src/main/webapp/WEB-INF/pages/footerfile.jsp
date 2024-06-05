@@ -42,19 +42,19 @@
             </span>
           </div>
           <div class="social_box">
-            <a href="#">
+            <a href="https://www.facebook.com/GauravpatilGR/">
               <img src="./files/images/fb.png" alt="">
             </a>
-            <a href="#">
+            <a href="https://x.com/GauravPatilGR">
               <img src="./files/images/twitter.png" alt="">
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/gauravpatil13/">
               <img src="./files/images/linkedin.png" alt="">
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/gauravpatil_13/">
               <img src="./files/images/instagram.png" alt="">
             </a>
-            <a href="#">
+            <a href="https://www.youtube.com/channel/UC5VjaBPyWjE2HVPUMFLcVWw">
               <img src="./files/images/youtube.png" alt="">
             </a>
           </div>
@@ -64,28 +64,13 @@
           <div class="row">
             <div class="col-md-3 col-lg-2">
               <div class="info_link-box">
-                <h5>
-                  Useful Link
-                </h5>
-                <ul>
-                  <li class=" active">
-                    <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="">
-                    <a class="" href="about.html">About </a>
-                  </li>
-                  <li class="">
-                    <a class="" href="work.html">Work </a>
-                  </li>
-                  <li class="">
-                    <a class="" href="category.html">Category </a>
-                  </li>
+               
                 </ul>
               </div>
             </div>
             <div class="col-md-3 ">
               <h5>
-                Offices
+                Office
               </h5>
               <p>
               Ghorpadi Gav,Pune,Maharashtra

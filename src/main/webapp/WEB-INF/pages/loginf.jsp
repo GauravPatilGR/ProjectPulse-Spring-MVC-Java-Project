@@ -8,7 +8,8 @@
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
     
-    <title>Company Login</title>
+    <title>Login Freelancer</title>
+    <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
     <style>
      a{
         text-decoration: none;
@@ -23,7 +24,7 @@
   
     <section class="container">
      <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="/" href="/">
+          <a class="/" href="/SpringMVCPersonal_Project">
             <img src="./files/images/logo.png" alt="" />
             <span>
               ProjectPluse Freelancer Login
@@ -31,33 +32,47 @@
           </a>
     
       <header>Welcome Back to ProjectPluse Login Here</header>
-      <form action="Logincheakf" class="form" method="post">
-       
-
-        <div class="input-box">
-          <label>Email Address</label>
-          <input type="text" placeholder="Enter Your  email address" name="email"  />
-        </div>
-        
-        <br>
-         <div class="input-box">
-          <label>Enter Password</label>
-          <input type="text" placeholder="Enter Your Passsword" name="password"  />
-        </div>
-
-      
-        <button type="submit">Login</button>
-        <p style="color:green;">${message}</p>
-        <p style="color:red;">${loginerror}</p>
-        
-        <br>
-        
-      <a href="registerf" > <button type="button">Register Here</button></a>
-       Dont'Have Account?
-      </form>
+      <form id="loginForm" action="Logincheakf" class="form" method="post">
+    <div class="input-box">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter Your email address" name="email" required />
+    </div>
+    <br>
+    <div class="input-box">
+        <label>Enter Password</label>
+        <input type="password" placeholder="Enter Your Password" name="password" required />
+    </div>
+    <button type="submit">Login</button>
+    <p style="color:green;">${message}</p>
+    <p style="color:red;">${loginerror}</p>
+    <br>
+    <a href="registerf"><button type="button">Register Here</button></a>
+    Don't have an account?
+</form>
     </section>
-  </body>
-</html>
+  
+  
+  <script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    var form = event.target;
+    var email = form.elements['email'].value.trim();
+    var password = form.elements['password'].value.trim();
+
+    // Ensure email is not empty and is valid
+    if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure password is not empty
+    if (password === "") {
+        alert('Password cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+});
+</script>
 
 <style>/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -183,4 +198,7 @@ body {
     row-gap: 15px;
   }
 }</style>
+
+</body>
+</html>
 

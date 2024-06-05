@@ -5,9 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<title>Registration Form in HTML CSS</title>-->
-    <!---Custom CSS File--->
+    
+    <title>Register Freelancer</title>
+    
+    
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
+    
     <style>
 
       a{
@@ -38,7 +42,7 @@
   
     <section class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="/" href="/">
+          <a class="/" href="/SpringMVCPersonal_Project">
             <img src="./files/images/logo.png" alt="" />
             <span>
               ProjectPulse
@@ -49,155 +53,189 @@
         </nav>
   
       <header>Start Your Carrier with Spering Registration Here</header>
-      <form action="freelancerdata" class="form" method="post" enctype="multipart/form-data">
-      <div class="column">
+    <form id="freelancerForm" action="freelancerdata" class="form" method="post" enctype="multipart/form-data">
+    <div class="column">
         <div class="input-box">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter full name" required name="fname" />
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter full name" required name="fname" />
         </div>
-
         <div class="input-box">
-          <label>Email Address</label>
-          <input type="text" placeholder="Enter email address" required name="femail"  />
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email address" required name="femail" />
         </div>
-        </div>
-        <div class="column">
-          <div class="input-box">
+    </div>
+    <div class="column">
+        <div class="input-box">
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter phone number" name="fphone"  required />
-          </div>
-          
-          
-          
-          
-          <div class="input-box">
+            <input type="text" placeholder="Enter phone number" name="fphone" required pattern="\d{10,15}" title="Please enter a valid phone number with 10-15 digits." />
+        </div>
+        <div class="input-box">
             <label>Birth Date</label>
-            <input type="date" placeholder="Enter birth date" name="fdate"  required />
-          </div>
+            <input type="date" placeholder="Enter birth date" name="fdate" required />
         </div>
-        
-        <div class="column">
+    </div>
+    <div class="column">
         <div class="input-box">
-          <label>Linkdin Username/link</label>
-          <input type="text" placeholder="Enter Your Linkedin Username/Link" required name="flinkedin"  />
+            <label>LinkedIn Username/Link</label>
+            <input type="url" placeholder="Enter Your LinkedIn Username/Link" required name="flinkedin" />
         </div>
-         <div class="input-box">
-          <label>Educational Qualification</label>
-          <input type="text" placeholder="Enter Your Educational Qualification " required name="feducation"  />
+        <div class="input-box">
+            <label>Educational Qualification</label>
+            <input type="text" placeholder="Enter Your Educational Qualification" required name="feducation" />
         </div>
+    </div>
+    <div class="column">
+        <div class="form-group file-area input-box">
+            <label for="fprofilephoto"><span>Upload Your Profile Photo</span></label>
+            <input type="file" name="fprofilephoto" id="fprofilephoto" accept="image/*" required />
         </div>
-        
-        
-        <div class="column">
-         <div class="form-group file-area input-box">
-        <label for="images"><span>Upload Your Profile Photo</span></label>
-    <input type="file" name="fprofilephoto" id="images"  />
+        <div class="input-box">
+            <label>Basic Charge for your Work</label>
+            <input type="text" placeholder="Enter Your Basic Charge for your Work" required name="fcharge" pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid amount." />
+        </div>
+    </div>
+    <br>
+    <div class="gender-box">
+        <h3>Gender</h3>
+        <div class="gender-option">
+            <div class="gender">
+                <input type="radio" id="check-male" name="gender" value="Male" checked />
+                <label for="check-male">Male</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-female" name="gender" value="Female" />
+                <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-other" name="gender" value="Prefer not to say" />
+                <label for="check-other">Prefer not to say</label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <label>Select Your Skills According to Work</label>
+    <br><br>
+    <label for="skill1">Skill 1:</label>
+    <select id="skill1" name="skills" style="font-size:20px;" required>
+        <option hidden></option>
+        <option value="Design & Arts">Design & Arts</option>
+        <option value="Web Development">Web Development</option>
+        <option value="SEO Marketing">SEO Marketing</option>
+        <option value="Video Editing">Video Editing</option>
+        <option value="Logo Design">Logo Design</option>
+        <option value="Game Design">Game Design</option>
+    </select>
+    <label for="skill2">Skill 2:</label>
+    <select id="skill2" name="skills" style="font-size:20px;" required>
+        <option hidden></option>
+        <option value="Design & Arts">Design & Arts</option>
+        <option value="Web Development">Web Development</option>
+        <option value="SEO Marketing">SEO Marketing</option>
+        <option value="Video Editing">Video Editing</option>
+        <option value="Logo Design">Logo Design</option>
+        <option value="Game Design">Game Design</option>
+    </select>
+    <label for="skill3">Skill 3:</label>
+    <select id="skill3" name="skills" style="font-size:20px;" required>
+        <option hidden></option>
+        <option value="Design & Arts">Design & Arts</option>
+        <option value="Web Development">Web Development</option>
+        <option value="SEO Marketing">SEO Marketing</option>
+        <option value="Video Editing">Video Editing</option>
+        <option value="Logo Design">Logo Design</option>
+        <option value="Game Design">Game Design</option>
+    </select>
+    <br>
+    <br>
+    <label for="skill4">Skill 4:</label>
+    <select id="skill4" name="skills" style="font-size:20px;" required>
+        <option hidden></option>
+        <option value="Design & Arts">Design & Arts</option>
+        <option value="Web Development">Web Development</option>
+        <option value="SEO Marketing">SEO Marketing</option>
+        <option value="Video Editing">Video Editing</option>
+        <option value="Logo Design">Logo Design</option>
+        <option value="Game Design">Game Design</option>
+    </select>
+    <div class="column">
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" placeholder="Enter Account Password" required name="password" />
+        </div>
+        <div class="input-box">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Enter Confirm Password" required name="cpassword" />
+        </div>
+    </div>
+    <button type="submit">Register</button>
+    <p style="color:red;">${messagee}</p>
+    <br> <a href="loginf"><button type="button">Login</button></a> Already Have Account?
+</form>
     
-     </div>
-     
-        <div class="input-box">
-          <label>Basic Charge for your Work </label>
-          <input type="text" placeholder="Enter Your Basic Charge for your Work " required name="fcharge"  />
-        </div></div>
-        
-        
-        <br>
-         <div class="gender-box">
-          <h3>Gender</h3>
-          <div class="gender-option">
-            <div class="gender">
-              <input type="radio" id="check-male" name="gender"  value="Male" checked />
-              <label for="check-male" name="gender">male</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-female" name="gender"  value="Female" />
-              <label for="check-female" name="gender">Female</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-other" name="gender"  value="prefer not to say" />
-              <label for="check-other" name="gender">prefer not to say</label>
-            </div>
-          </div>
-        </div>
-        
-        <br>
-        
-          <label>Select Your Skills Accoring to Work</label>
-          <br>
-          <br>
- 
-        
-        <label for="skill1">Skill 1:</label>
-        <select id="skill1" name="skills" style="font-size:20px;" required>
-            <option hidden></option>
-            <option value="Design & Arts">Design & Arts</option>
-            <option value="Web Development">Web Development</option>
-            <option value="SEO Markting">SEO Markting</option>
-            <option value="Video Edting">Video Edting</option>
-            <option value="Logo Design">Logo Design</option>
-            <option value="Game Design">Game Design</option>
-            <!-- Add more options as needed -->
-        </select>
-
-        <label for="skill2">Skill 2:</label>
-         <select id="skill1" name="skills"  style="font-size:20px;" required>
-          <option  value=""></option>
-            <option value="Design & Arts">Design & Arts</option>
-            <option value="Web Development">Web Development</option>
-            <option value="SEO Markting">SEO Markting</option>
-            <option value="Video Edting">Video Edting</option>
-            <option value="Logo Design">Logo Design</option>
-            <option value="Game Design">Game Design</option>
-            <!-- Add more options as needed -->
-        </select>
-        
-        <br>
-        <br>
-
-        <label for="skill3">Skill 3:</label>
-          <select id="skill1" name="skills" style="font-size:20px;" required>
-           <option hidden value="">  </option>
-            <option value="Design & Arts">Design & Arts</option>
-            <option value="Web Development">Web Development</option>
-            <option value="SEO Markting">SEO Markting</option>
-            <option value="Video Edting">Video Edting</option>
-            <option value="Logo Design">Logo Design</option>
-            <option value="Game Design">Game Design</option>
-            <!-- Add more options as needed -->
-        </select>
-
-        <label for="skill4">Skill 4:</label>
-          <select id="skill1" name="skills" style="font-size:20px;" required>
-           <option hidden value="">  </option>
-            <option value="Design & Arts">Design & Arts</option>
-            <option value="Web Development">Web Development</option>
-            <option value="SEO Markting">SEO Markting</option>
-            <option value="Video Edting">Video Edting</option>
-            <option value="Logo Design">Logo Design</option>
-            <option value="Game Design">Game Design</option>
-            <!-- Add more options as needed -->
-        </select>
-        
-          <div class="column">
-        <div class="input-box">
-          <label>Password</label>
-          <input type="text" placeholder="Enter Account Password" required name="password"  />
-        </div>
-         <div class="input-box">
-          <label>Confirm Password</label>
-          <input type="text" placeholder="Enter Confirm Password " required name="cpassword"  />
-        </div>
-        </div>
-             
-         
-        <button type="submit">Register</button>
-         <p style=" color:red;">${messagee}</p>
-        <br> <a href="regu" > <button type="button">Login</button></a>
-       Alredy Have Account?
-      </form>
     </section>
-  </body>
-</html>
+  
+  <script>
+document.getElementById('freelancerForm').addEventListener('submit', function(event) {
+    var form = event.target;
+    var fullName = form.elements['fname'].value.trim();
+    var email = form.elements['femail'].value.trim();
+    var phone = form.elements['fphone'].value.trim();
+    var linkedin = form.elements['flinkedin'].value.trim();
+    var education = form.elements['feducation'].value.trim();
+    var charge = form.elements['fcharge'].value.trim();
+    var password = form.elements['password'].value.trim();
+    var cpassword = form.elements['cpassword'].value.trim();
+
+    // Ensure full name is not empty
+    if (fullName === "") {
+        alert('Full Name cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure email is not empty and is valid
+    if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure phone number is valid
+    if (phone === "" || !/^\d{10,15}$/.test(phone)) {
+        alert('Please enter a valid phone number with 10-15 digits.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure LinkedIn username/link is not empty
+    if (linkedin === "") {
+        alert('LinkedIn Username/Link cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure educational qualification is not empty
+    if (education === "") {
+        alert('Educational Qualification cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure basic charge is a valid amount
+    if (charge === "" || !/^\d+(\.\d{1,2})?$/.test(charge)) {
+        alert('Please enter a valid amount for your charge.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure password and confirm password match
+    if (password !== cpassword) {
+        alert('Password and Confirm Password do not match.');
+        event.preventDefault();
+        return;
+    }
+});
+</script>
 
 <style>/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -361,3 +399,7 @@ body {
             background-color: #45a049;
         }
 }</style>
+
+
+</body>
+</html>

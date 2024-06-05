@@ -8,7 +8,9 @@
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
     
-    <title>Company Login</title>
+    <title>Login Companies</title>
+    <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
+    
     <style>
      a{
         text-decoration: none;
@@ -23,7 +25,7 @@
   
     <section class="container">
      <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="/" href="/">
+          <a class="/" href="/SpringMVCPersonal_Project">
             <img src="./files/images/logo.png" alt="" />
             <span>
               ProjectPluse Company Login
@@ -31,31 +33,49 @@
           </a>
     
       <header>Welcome Back to ProjectPluse Login Here</header>
-      <form action="logindata" class="form" method="post">
-       
+     <form id="loginForm" action="logindata" class="form" method="post">
+    <div class="input-box">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter Your email address" name="email" required />
+    </div>
 
-        <div class="input-box">
-          <label>Email Address</label>
-          <input type="text" placeholder="Enter Your  email address" name="email"  />
-        </div>
-        
-        <br>
-         <div class="input-box">
-          <label>Enter Password</label>
-          <input type="text" placeholder="Enter Your Passsword" name="password"  />
-        </div>
+    <br>
+    <div class="input-box">
+        <label>Enter Password</label>
+        <input type="password" placeholder="Enter Your Password" name="password" required pattern=".{8,}" title="Password must be at least 8 characters long." />
+    </div>
 
-      
-        <button type="submit">Login</button>
-        
-        <br>
-        
-      <a href="registercompany" > <button type="button">Register Here</button></a>
-       Dont'Have Account?
-      </form>
+    <button type="submit">Login</button>
+    <br>
+    <a href="registercompany">
+        <button type="button">Register Here</button>
+    </a>
+    Don't Have Account?
+</form>
     </section>
-  </body>
-</html>
+ 
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    var form = event.target;
+    var email = form.elements['email'].value;
+    var password = form.elements['password'].value;
+
+    // Simple email format validation (additional to HTML5 email type)
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault(); // Prevent form submission
+        return;
+    }
+
+    // Password length validation (additional to HTML5 pattern)
+    if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        event.preventDefault(); // Prevent form submission
+    }
+});
+</script>
+
 
 <style>/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -181,4 +201,6 @@ body {
     row-gap: 15px;
   }
 }</style>
+</body>
+</html>
 

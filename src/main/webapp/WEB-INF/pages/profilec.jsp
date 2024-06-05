@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title></title>
+<title>Profile</title>
+<link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
  <%@ include file="headerfile.jsp" %>
 
 </head>

@@ -15,7 +15,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Welcome</title>
+  <title>Welcome ProjectPulse+</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="./files/css/bootstrap.css" />
@@ -25,6 +25,8 @@
   <link href="./files/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="./files/css/responsive.css" rel="stylesheet" />
+  
+  <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
   
    <script src="https://kit.fontawesome.com/afcf20c6bc.js" crossorigin="anonymous"></script>
 </head>
@@ -38,7 +40,7 @@
           <a class="navbar-brand" href="index.html">
             <img src="./files/images/logo.png" alt="" />
             <span>
-             ProjectPulse++
+             ProjectPulse+
             </span>
           </a>
           
@@ -49,31 +51,27 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/SpringMVCPersonal_Project">Home &nbsp; <i class="fa-solid fa-house"></i> <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> About</a>
+                <a class="nav-link" href="#about"> About &nbsp; <i class="fa-solid fa-industry"></i></a>
               </li>
+            
               <li class="nav-item">
-                <a class="nav-link" href="work.html">Category  </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="regu">Login / Register As Freelancer</a>
+                <a class="nav-link" href="loginf">Login As Freelancer &nbsp; <i class="fa-solid fa-users"></i></a>
               </li>
             </ul>
             <div class="user_option">
-              <a href="logincompany">
+              <a href="loginc">
                
                  <span>
-                  Login / Register As Company
+                  Login As Company &nbsp; <i class="fa-solid fa-building"></i>
                 </span>
               </a>
                
               
              
-              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
+              
             </div>
           </div>
           <div>
@@ -128,10 +126,10 @@
                     </p>
                     <div class="btn-box">
                       <a href="loginc" class="btn-1">
-                       Hire a Freelancer
+                       Hire a Freelancer &nbsp;<i class="fa-brands fa-hive"></i>
                       </a>
                       <a href="loginf" class="btn-2">
-                       Earn Money Freelancing
+                       Earn Money Freelancing &nbsp; <i class="fa-solid fa-dollar-sign"></i>
                       </a>
                     </div>
                   </div>
@@ -159,10 +157,10 @@
                     </p>
                     <div class="btn-box">
                       <a href="loginc" class="btn-1">
-                          Hire a Freelancer
+                       Hire a Freelancer &nbsp;<i class="fa-brands fa-hive"></i>
                       </a>
                       <a href="loginf" class="btn-2">
-                        Earn Money Freelancing
+                       Earn Money Freelancing &nbsp; <i class="fa-solid fa-dollar-sign"></i>
                       </a>
                     </div>
                   </div>
@@ -190,10 +188,10 @@
                     </p>
                     <div class="btn-box">
                       <a href="loginc" class="btn-1">
-                         Hire a Freelancer
+                       Hire a Freelancer &nbsp;<i class="fa-brands fa-hive"></i>
                       </a>
                       <a href="loginf" class="btn-2">
-                       Earn Money Freelancing
+                       Earn Money Freelancing &nbsp; <i class="fa-solid fa-dollar-sign"></i>
                       </a>
                     </div>
                   </div>
@@ -237,7 +235,7 @@
             </p>
             <div class="btn-box">
              
-              <a href="" class="btn-2">
+              <a href="loginc" class="btn-2">
                 Hire
               </a>
             </div>
@@ -603,7 +601,7 @@ Building chatbots</a>
   <!-- about section -->
 
   <section class="about_section layout_padding">
-    <div class="container">
+    <div class="container" id=about>
       <div class="row">
         <div class="col-md-10 col-lg-9 mx-auto">
           <div class="img-box">
@@ -611,7 +609,7 @@ Building chatbots</a>
           </div>
         </div>
       </div>
-      <div class="detail-box">
+      <div class="detail-box"  >
         <h2>
           About ProjectPulse Company
         </h2>

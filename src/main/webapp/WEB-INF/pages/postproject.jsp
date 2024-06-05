@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Member Registration</title>
+    <title>Post-Project</title>
+      <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -228,68 +229,86 @@
            
     
     <div class="testbox">
-      <form action="postprojectdata" method="post" enctype="multipart/form-data">
-        <div class="banner">
-      <h1>Post Project <i class="fa-solid fa-laptop-code"></i> ,What you need done?</h1>
+    <form id="postProjectForm" action="postprojectdata" method="post" enctype="multipart/form-data">
+    <div class="banner">
+        <h1>Post Project <i class="fa-solid fa-laptop-code"></i>, What you need done?</h1>
+    </div>
+    <div class="colums">
+        <div class="item">
+            <label for="projectd">Project Description<span>*</span></label>
+            <textarea id="projectDescription" name="projectd" rows="4" cols="50" ></textarea>
         </div>
-        <div class="colums">
-          <div class="item">
-            <label for="fname">Project Discription<span>*</span></label>
-            <textarea id="myTextArea" name="projectd" rows="4" cols="50">
-              
-          </textarea>
-          </div>
-          <div class="item">
-            <label for="lname">Project Tittle<span>*</span></label>
-            <input type="text" id="fileInput" name="projectt" placeholder="Software Engineer">
-             <br>
-           
-            <br>
-          </div>
-          
-            <div class="item">
-            <label for="lname"> Projecr Documentation<span>*</span></label>
-            <input type="file" id="fileInput" name="projectfile" placeholder="Software Engineer">
-             <br>
-           
-            <br>
-          </div>
-          <br><br>
-          <div class="item">
-            <label for="address1">Relevent skills need for this Project?<span>*</span></label>
+        <div class="item">
+            <label for="projectt">Project Title<span>*</span></label>
+            <input type="text" id="projectTitle" name="projectt" placeholder="AI Chat bot" />
+        </div>
+        <div class="item">
+            <label for="projectfile">Project Documentation<span>*</span></label>
+            <input type="file" id="projectFile" name="projectfile" accept=".pdf,.doc,.docx" required />
+        </div>
+        <br><br>
+        <div class="item">
+            <label for="projects">Relevant skills needed for this Project?<span>*</span></label>
             <br>
             <small>Enter up to 5 skills that best describe your project. Freelancers will use these skills to find projects they are most interested and experienced in.</small>
-            <input id="address1" height="50px"   name="projects" required/>
-            <h6>Suggested skills:
-              MySQL,
-              Web Hosting,
-              Software Testing,
-              Engineering,
-              Software Architecture</h6>
-          </div>
-          <br><br>
-         
-         
-        
-     
+            <input id="skills" name="projects" required />
+            <h6>Suggested skills: MySQL, Web Hosting, Software Testing, Engineering, Software Architecture</h6>
+        </div>
+        <br><br>
         <div class="question">
-          <label>What is your estimated budget or Salary for Project?</label>
-           <input  type="text"  name="projectb" placeholder="10000,20000"/>
-           
-           <c:forEach items="${kk}" var="e">
-            <label>Comapany Name</label>
-            <input  type="text"  name="projectc" value="${e.name}" readonly/>
-            
-             <label>Comapany Email</label>
-             <input  type="text"  name="projecte" value="${e.email}" readonly/>
-         </c:forEach>
-          <br>
+            <label>What is your estimated budget or Salary for Project?</label>
+            <input type="text" id="budget" name="projectb" placeholder="10000,20000" pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid number." required />
         </div>
-       <h4>${message}</h4>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+        <c:forEach items="${kk}" var="e">
+            <label>Company Name</label>
+            <input type="text" name="projectc" value="${e.name}" readonly />
+            <label>Company Email</label>
+            <input type="text" name="projecte" value="${e.email}" readonly />
+        </c:forEach>
+        <br>
+        <h4>${message}</h4>
+        <button type="submit">Submit</button>
     </div>
+</form>
+    </div>
+    
+    <script>
+document.getElementById('postProjectForm').addEventListener('submit', function(event) {
+    var form = event.target;
+    var projectDescription = form.elements['projectd'].value.trim();
+    var projectTitle = form.elements['projectt'].value.trim();
+    var skills = form.elements['projects'].value.trim();
+    var budget = form.elements['projectb'].value.trim();
+
+    // Ensure project description is not empty
+    if (projectDescription === "") {
+        alert('Project description cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure project title is not empty
+    if (projectTitle === "") {
+        alert('Project title cannot be empty.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure skills are not empty
+    if (skills === "") {
+        alert('Please enter relevant skills.');
+        event.preventDefault();
+        return;
+    }
+
+    // Ensure budget is a valid number
+    if (!/^\d+(\.\d{1,2})?$/.test(budget)) {
+        alert('Please enter a valid budget or salary.');
+        event.preventDefault();
+        return;
+    }
+});
+</script>
     
     
     

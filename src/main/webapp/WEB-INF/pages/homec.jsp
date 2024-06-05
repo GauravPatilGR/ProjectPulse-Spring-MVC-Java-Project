@@ -10,9 +10,9 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
- 
+  <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
 
-  <title>Homepage</title>
+  <title>Home</title>
 
  
 </head>

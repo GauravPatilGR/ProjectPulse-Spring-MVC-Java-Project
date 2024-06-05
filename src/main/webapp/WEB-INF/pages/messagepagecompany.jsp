@@ -12,7 +12,8 @@
   <!-- Site Metas -->
  
 
-  <title>Homepage</title>
+  <title>Message-page</title>
+  <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="./files/css/bootstrap.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">

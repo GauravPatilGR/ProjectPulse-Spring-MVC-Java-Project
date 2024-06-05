@@ -5,9 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Registration Form</title>
+    <title>Register Companies</title>
     <!---Custom CSS File--->
     <link rel="stylesheet" href="./files/style.css" />
+    <link rel="shortcut icon" href="./files/images/favicon-32x32.png" type="image/x-icon">
     
      <style>
 
@@ -32,7 +33,7 @@
     <section class="container">
     
     <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="/" href="/">
+          <a class="/" href="/SpringMVCPersonal_Project">
             <img src="./files/images/logo.png" alt="" />
             <span>
               ProjectPulse
@@ -42,57 +43,67 @@
 
         </nav>
       <header>Hire the best freelancers for any job, online. Registration Here</header>
-      <form action="regdata" class="form" method="post"  enctype="multipart/form-data">
-        <div class="input-box">
-          <label>Personal Name/Organization Name</label>
-          <input type="text" placeholder="Enter  name" required name="name" />
-        </div>
+      <form id="registrationForm" action="regdata" class="form" method="post" enctype="multipart/form-data">
+    <div class="input-box">
+        <label>Personal Name/Organization Name</label>
+        <input type="text" placeholder="Enter name" required name="name" pattern="[A-Za-z\s]{1,}" title="Name should only contain letters and spaces." />
+    </div>
 
-        <div class="input-box">
-          <label>Email </label>
-          <input type="text" placeholder="Enter email address" required name="email"  />
-        </div>
+    <div class="input-box">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email address" required name="email" />
+    </div>
 
-        
-          <div class="input-box">
-            <label>Phone Number</label>
-            <input type="text" placeholder="Enter Contact number" name="number"  required />
-          </div>
-          
-       
-          
-          
-          <div class="input-box">
-            <label>Company Website</label>
-            <input type="text" placeholder="Enter Company Website" name="website"  required />
-          </div>
-          
-          <div class="input-box">
-            <label>Company Photo or Banner</label>
-            <input type="file" placeholder="Enter Company Website" name="filename"  required />
-          </div>
-          
-          <div class="input-box">
-            
-             
-             <input type="text" name="password" placeholder="Enter Password" required />
-             
-              <input type="text" name="confirmpassword" placeholder="Enter Confirm Password" required />
-          </div>
-          
-         
-         
-         
-        
-        
-         
-           
-          
-        <button type="submit">Register</button>
-        <br> <a href="loginc" > <button type="button">Login</button></a>
-       Alredy Have Account?
-      </form>
+    <div class="input-box">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter Contact number" name="number" required pattern="\d{10}" title="Phone number should be 10 digits." />
+    </div>
+
+    <div class="input-box">
+        <label>Company Website</label>
+        <input type="url" placeholder="Enter Company Website" name="website" required pattern="https?://.+" title="Enter a valid URL starting with http:// or https://." />
+    </div>
+
+    <div class="input-box">
+        <label>Company Photo or Banner</label>
+        <input type="file" name="filename" required accept="image/*" title="Please upload a valid image file." />
+    </div>
+
+    <div class="input-box">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password" required pattern=".{8,}" title="Password must be at least 8 characters long." />
+    </div>
+
+    <div class="input-box">
+        <label>Confirm Password</label>
+        <input type="password" name="confirmpassword" placeholder="Enter Confirm Password" required pattern=".{8,}" title="Password must be at least 8 characters long." />
+    </div>
+
+    <button type="submit">Register</button>
+    <br>
+    <a href="loginc">
+        <button type="button">Login</button>
+    </a>
+    Already Have Account?
+</form>
     </section>
+    
+    <script>
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    // Get the form elements
+    var form = event.target;
+    var password = form.elements['password'].value;
+    var confirmPassword = form.elements['confirmpassword'].value;
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        event.preventDefault(); // Prevent form submission
+    }
+
+    // Additional JavaScript validation can be added here
+});
+</script>
   
 
 <style>/* Import Google font - Poppins */
