@@ -1,4 +1,4 @@
-# Projectplus +
+# ProjectPulse
 
 ![SpringMVC](https://img.shields.io/badge/SpringMVC-4-green)
 ![HTML](https://img.shields.io/badge/HTML-5-red)
