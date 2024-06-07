@@ -55,6 +55,10 @@ Communication
 - Freelancer Search and Hiring
   ![Screenshot (159)](https://github.com/GauravPatilGR/Projectplus-Spring-MVC-Java-Project/assets/123281827/c5d407eb-8edd-4330-b277-4ce2b1e8d1bb)
   ![Screenshot (160)](https://github.com/GauravPatilGR/Projectplus-Spring-MVC-Java-Project/assets/123281827/3850e1a2-067f-4ccf-a5d9-c1e5778aec8b)
+  ![Screenshot (165)](https://github.com/GauravPatilGR/Projectplus-Spring-MVC-Java-Project/assets/123281827/6162da10-8514-46dd-a2b3-e8cfa77ab1fb)
+  ![Screenshot (166)](https://github.com/GauravPatilGR/Projectplus-Spring-MVC-Java-Project/assets/123281827/4fd878a1-5158-4929-9c05-d69bbed9120e)
+
+
 
 
 
