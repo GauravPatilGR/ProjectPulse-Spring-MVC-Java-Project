@@ -1,6 +1,6 @@
 # Projectplus +
 
-![Spring MVC](https://img.shields.io/badge/Spring_MVCt-4.0green)
+![SpringMVC](https://img.shields.io/badge/SpringMVC-4-green)
 ![HTML](https://img.shields.io/badge/HTML-5-red)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
