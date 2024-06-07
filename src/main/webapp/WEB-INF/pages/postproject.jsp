@@ -257,9 +257,17 @@
         <br><br>
         <div class="question">
             <label>What is your estimated budget or Salary for Project?</label>
-            <input type="text" id="budget" name="projectb" placeholder="10000,20000" pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid number." required />
+            <input type="text" id="budget" name="projectb" placeholder="10000,20000" title="Please enter a valid number." required />
         </div>
+        <br>
+        <br>
+         <br>
+        <br>
+         <br>
+        <br>
+           </div>
         <c:forEach items="${kk}" var="e">
+        
             <label>Company Name</label>
             <input type="text" name="projectc" value="${e.name}" readonly />
             <label>Company Email</label>
@@ -268,7 +276,7 @@
         <br>
         <h4>${message}</h4>
         <button type="submit">Submit</button>
-    </div>
+ 
 </form>
     </div>
     
@@ -301,12 +309,7 @@ document.getElementById('postProjectForm').addEventListener('submit', function(e
         return;
     }
 
-    // Ensure budget is a valid number
-    if (!/^\d+(\.\d{1,2})?$/.test(budget)) {
-        alert('Please enter a valid budget or salary.');
-        event.preventDefault();
-        return;
-    }
+    
 });
 </script>
     

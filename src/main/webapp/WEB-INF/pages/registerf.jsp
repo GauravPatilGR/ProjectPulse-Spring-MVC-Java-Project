@@ -114,6 +114,7 @@
     </div>
     <br>
     <label>Select Your Skills According to Work</label>
+    <p>note:- You can edit it after login</p>
     <br><br>
     <label for="skill1">Skill 1:</label>
     <select id="skill1" name="skills" style="font-size:20px;" required>

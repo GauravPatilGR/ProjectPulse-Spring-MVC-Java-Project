@@ -441,7 +441,7 @@
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">Capgemini</a>
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">Capgemini</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Java Developer</a>
             <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Spring Boot,SPring MVC ,DSA</p>
@@ -460,7 +460,7 @@
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">Infosys</a>
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">Infosys</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Business analyst</a>
             <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Analytical,
@@ -482,7 +482,7 @@ Negotiation</p>
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">Wipro</a>
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">Wipro</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Python developer</a>
             <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>Version control,
@@ -529,7 +529,7 @@ Core python expertise</p>
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">
 Health administration</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Gauravinfo Technologies</a>
@@ -553,7 +553,7 @@ Health administration</a>
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">
 Employee tracking system</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Qualcomm</a>
@@ -577,7 +577,7 @@ Employee tracking system</a>
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">
 Building chatbots</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">Wipro Technologies</a>

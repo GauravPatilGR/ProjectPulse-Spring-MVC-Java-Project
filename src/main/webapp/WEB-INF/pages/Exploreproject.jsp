@@ -105,7 +105,7 @@
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">${e.projectt}</a>
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">${e.projectt}</a>
             <br>
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">${e.projectc}</a>
             <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>${e.projects}</p>

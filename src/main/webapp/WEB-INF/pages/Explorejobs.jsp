@@ -106,8 +106,9 @@
             </a><!-- / hovereffect -->
           </figure><!-- / portfolio-item -->
           <div class="card-body">
-            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 34px;">${e.jcname}</a>
+            <a  class="card-title title-link fs-16 fw-bold" style="font-size: 24px;">${e.jcname}</a>
             <br>
+           
             <a href="single-project6.html" class="card-title title-link fs-16 fw-bold">${e.jtittle}</a>
             <p class="card-text mt-3 fs-14" style="color:blue;"><b>Required Skills:</b>${e.jskills}</p>
             <center><a href="viewandApply/${e.id}"><button type="button" class="btn btn-primary">View and Apply</button></a></center>

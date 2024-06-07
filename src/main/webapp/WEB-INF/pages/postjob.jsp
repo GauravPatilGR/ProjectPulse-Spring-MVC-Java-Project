@@ -267,7 +267,7 @@
         </div>
         <div class="question">
             <label>What is your estimated budget or Salary?</label>
-            <input type="text" id="budget" name="jsalary" placeholder="10000,20000" required pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid number." />
+            <input type="text" id="budget" name="jsalary" placeholder="10000,20000" required title="Please enter a valid number." />
             <c:forEach items="${kk}" var="e">
                 <input type="hidden" name="jcname" value="${e.name}" />
                 <input type="hidden" name="jcemail" value="${e.email}" />
@@ -310,12 +310,7 @@ document.getElementById('postJobForm').addEventListener('submit', function(event
         return;
     }
 
-    // Ensure budget is a valid number
-    if (!/^\d+(\.\d{1,2})?$/.test(budget)) {
-        alert('Please enter a valid budget or salary.');
-        event.preventDefault();
-        return;
-    }
+   
 });
 </script>
     
